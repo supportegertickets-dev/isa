@@ -36,7 +36,7 @@ export default function Header() {
             </Link>
           ))}
           <a
-            href="https://youtube.com/@isamoma003"
+            href="https://youtube.com/@Isa_Moma-003"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-red-600 transition"
@@ -72,7 +72,7 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href="https://youtube.com/@isamoma003"
+              href="https://youtube.com/@Isa_Moma-003"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-red-600 transition"

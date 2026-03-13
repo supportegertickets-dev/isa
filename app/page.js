@@ -57,8 +57,11 @@ export default function Portfolio() {
               <a href="https://github.com" className="p-3 border border-slate-200 rounded-full hover:bg-slate-50 transition">
                 <Github size={20} />
               </a>
-              <a href="https://youtube.com/@isamoma003" className="p-3 border border-slate-200 rounded-full hover:bg-slate-50 transition text-red-600">
+              <a href="https://youtube.com/@Isa_Moma-003" className="p-3 border border-slate-200 rounded-full hover:bg-slate-50 transition text-red-600">
                 <Youtube size={20} />
+              </a>
+              <a href="https://tiktok.com/@isa.moma" className="p-3 border border-slate-200 rounded-full hover:bg-slate-50 transition">
+                <Video size={20} />
               </a>
             </div>
           </motion.div>
