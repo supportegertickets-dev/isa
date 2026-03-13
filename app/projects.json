@@ -1,0 +1,20 @@
+[
+  {
+    "title": "M-Pesa Ticketing System",
+    "desc": "Full-stack payment integration for events using Next.js, Node.js, and MongoDB. Handles secure M-Pesa API transactions for Kenyan users.",
+    "tech": ["Next.js", "Node.js", "MongoDB", "M-Pesa API"],
+    "link": "#"
+  },
+  {
+    "title": "EESA Dashboard",
+    "desc": "Association management system for engineering students. Features member tracking, event management, and communication tools.",
+    "tech": ["React", "Express", "PostgreSQL"],
+    "link": "#"
+  },
+  {
+    "title": "Salsa Rhythm App",
+    "desc": "A creative tracker for dance progress with video tutorials, progress logging, and community features.",
+    "tech": ["React Native", "Firebase", "Node.js"],
+    "link": "#"
+  }
+]

@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+3:"$Sreact.suspense"
+0:{"buildId":"pVSjyZBWKoM8GddP41lld","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"max-w-xl mx-auto p-12 text-center","children":[["$","h1",null,{"className":"text-4xl font-black mb-8","children":"Let's Connect"}],["$","div",null,{"className":"space-y-6 text-lg","children":[["$","p",null,{"children":[["$","strong",null,{"children":"Phone:"}]," +254 720 879 846"]}],["$","p",null,{"children":[["$","strong",null,{"children":"Email:"}]," isamoma003@gmail.com"]}],["$","p",null,{"children":[["$","strong",null,{"children":"Instagram:"}]," @isa_moma_"]}],["$","p",null,{"children":[["$","strong",null,{"children":"Website:"}]," isamoma.vercel.app"]}]]}],["$","a",null,{"href":"/","className":"inline-block mt-8 text-blue-600 font-bold hover:underline","children":"Back Home"}]]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"loading":null,"isPartial":false}
+4:null

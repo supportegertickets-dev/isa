@@ -1,30 +1,1099 @@
-[00:00:02.940] Server  LOG     ✓ Ready in 1953ms
-[00:00:27.898] Server  LOG     ○ Compiling / ...
-[00:00:34.388] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:37.604] Server  LOG     ✓ Compiled in 3.2s
-[00:03:10.504] Server  WARN    ⚠ ./tailwind.config.js
-Specified module format (EcmaScript Modules) is not matching the module format of the source code (CommonJs)
-The EcmaScript module format was specified in the package.json that is affecting this source file or by using an special extension, but it looks like that CommonJs syntax is used in the source code.
-Exports made by CommonJs syntax will lead to a runtime error, since the module is in EcmaScript mode. Either change the "type" field in the package.json or replace CommonJs syntax with EcmaScript import/export syntax in the source file.
+[00:00:04.205] Server  LOG     ✓ Ready in 3.2s
+[00:00:12.840] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:00.612] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:03.553] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:19.261] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:56.891] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:02.877] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:06.209] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:08.750] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:10.388] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:02.003] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:14.110] Server  LOG     ✓ Compiled in 1246ms
+[00:13:14.228] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:13:16.232] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:13:17.223] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:13:18.222] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:13:20.233] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:13:21.230] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:13:22.226] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:13:24.232] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:13:25.234] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:13:29.228] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:13:30.234] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:13:32.232] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:13:34.226] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:13:40.219] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:13:43.230] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:13:44.242] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:13:45.561] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:13:47.228] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:13:48.230] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:13:49.222] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:13:51.232] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:14:01.233] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:14:02.220] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:14:04.224] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:14:07.230] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:14:07.230] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:14:08.227] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:14:09.221] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:14:15.232] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:14:15.232] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:14:16.222] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:14:21.223] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:14:27.227] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:14:37.704] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:14:37.709] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:14:39.228] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:14:43.223] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:14:43.224] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:14:53.226] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:14:54.246] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:14:57.223] Browser ERROR   ./app/layout.js
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 104
+[00:16:44.280] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:08.847] Server  ERROR   ⨯ ./app/layout.js:3:10
+Ecmascript file had an error
+  1 | import './globals.css';
+  2 | import Link from 'next/link';
+> 3 | import { usePathname } from 'next/navigation';
+    |          ^^^^^^^^^^^
+  4 | import { useState } from 'react';
+  5 | import { Menu, X } from 'lucide-react';
+  6 |
+
+You're importing a component that needs `usePathname`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
 
 
-[00:03:11.316] Server  WARN    ⚠ ./tailwind.config.js
-Specified module format (EcmaScript Modules) is not matching the module format of the source code (CommonJs)
-The EcmaScript module format was specified in the package.json that is affecting this source file or by using an special extension, but it looks like that CommonJs syntax is used in the source code.
-Exports made by CommonJs syntax will lead to a runtime error, since the module is in EcmaScript mode. Either change the "type" field in the package.json or replace CommonJs syntax with EcmaScript import/export syntax in the source file.
 
 
-[00:03:11.500] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:14.647] Server  WARN    ⚠ ./tailwind.config.js
-Specified module format (EcmaScript Modules) is not matching the module format of the source code (CommonJs)
-The EcmaScript module format was specified in the package.json that is affecting this source file or by using an special extension, but it looks like that CommonJs syntax is used in the source code.
-Exports made by CommonJs syntax will lead to a runtime error, since the module is in EcmaScript mode. Either change the "type" field in the package.json or replace CommonJs syntax with EcmaScript import/export syntax in the source file.
+
+./app/layout.js:4:10
+Ecmascript file had an error
+  2 | import Link from 'next/link';
+  3 | import { usePathname } from 'next/navigation';
+> 4 | import { useState } from 'react';
+    |          ^^^^^^^^
+  5 | import { Menu, X } from 'lucide-react';
+  6 |
+  7 | export const metadata = {
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
 
 
-[00:04:15.385] Server  WARN    ⚠ ./tailwind.config.js
-Specified module format (EcmaScript Modules) is not matching the module format of the source code (CommonJs)
-The EcmaScript module format was specified in the package.json that is affecting this source file or by using an special extension, but it looks like that CommonJs syntax is used in the source code.
-Exports made by CommonJs syntax will lead to a runtime error, since the module is in EcmaScript mode. Either change the "type" field in the package.json or replace CommonJs syntax with EcmaScript import/export syntax in the source file.
 
 
-[00:04:15.513] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:15.668] Server  ERROR   ⨯ ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+
+
+[00:17:15.931] Server  ERROR   ⨯ ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+
+
+[00:17:16.340] Server  ERROR   ⨯ ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+
+
+[00:17:16.841] Server  LOG     ✓ Compiled in 28.2s
+[00:17:17.268] Browser ERROR   uncaughtError: Error: ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+
+
+[00:17:17.468] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:17.468] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:17.468] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:17.468] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:17.468] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:17.468] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:19.895] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:21.074] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:22.490] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:23.668] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:24.011] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:25.562] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:28.195] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:34.661] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:34.974] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:35.927] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:37.176] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:38.237] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:46.988] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:51.438] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:51.739] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:56.949] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:17:58.594] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:18:01.155] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:18:06.204] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:18:12.914] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:18:13.197] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:18:17.253] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:18:19.507] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:18:20.699] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:18:21.312] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:18:22.899] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:18:23.529] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:18:26.204] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:18:27.334] Browser ERROR   ./app/layout.js:9:14
+Ecmascript file had an error
+   7 | import { Menu, X } from 'lucide-react';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Isaiah Maosa - Engineering & Code',
+  11 |   description: 'Portfolio of Isaiah Maosa - Full-stack developer, electrical engineering student, and community leader.',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./app/layout.js [Client Component Browser]
+    ./app/layout.js [Server Component]
+
+  Client Component SSR:
+    ./app/layout.js [Client Component SSR]
+    ./app/layout.js [Server Component]
+[00:18:28.800] Server  LOG     ✓ Compiled in 906ms
+[00:18:30.951] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:23.983] Server  ERROR   ⨯ Error: Attempted to call createMotionComponent() from the server but createMotionComponent is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:19:25.140] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:25.355] Browser ERROR   uncaughtError: Error: Attempted to call createMotionComponent() from the server but createMotionComponent is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+[00:19:45.445] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:29.474] Server  LOG     ✓ Compiled in 163.9s
+[00:22:29.866] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
