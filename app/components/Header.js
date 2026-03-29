@@ -3,12 +3,14 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Settings } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 export default function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { isAuthenticated } = useAuth();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -56,6 +58,21 @@ export default function Header() {
             </Link>
           ))}
           <span className="w-px h-6 bg-slate-200 mx-2" />
+          {isAuthenticated ? (
+            <Link
+              href="/admin"
+              className="px-4 py-2 rounded-full text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition-all inline-flex items-center gap-1.5"
+            >
+              <Settings size={13} /> Admin
+            </Link>
+          ) : (
+            <Link
+              href="/login"
+              className="px-4 py-2 rounded-full opacity-0 hover:opacity-100 text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300"
+            >
+              Login
+            </Link>
+          )}
           <a
             href="https://youtube.com/@Isa_Moma-003"
             target="_blank"
@@ -109,6 +126,15 @@ export default function Header() {
             >
               YouTube
             </a>
+            <Link
+              href={isAuthenticated ? '/admin' : '/login'}
+              className={`px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition text-base font-medium ${
+                isAuthenticated ? 'text-slate-700' : 'text-slate-300 hover:text-blue-600'
+              }`}
+              onClick={() => setIsOpen(false)}
+            >
+              {isAuthenticated ? 'Admin' : '...'}
+            </Link>
             <a
               href="/contact"
               className="mt-2 flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition"

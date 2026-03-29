@@ -1,8 +1,18 @@
 'use client';
 
-import { Github, Youtube, Video, Zap, Music, Code, ArrowUpRight, Mail, Linkedin, Monitor, Server, Smartphone, Users, Award, Calendar, ChevronRight, ExternalLink, Sparkles } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Github, Youtube, Video, Zap, Music, Code, ArrowUpRight, Mail, Linkedin, Monitor, Server, Smartphone, Users, Award, Calendar, ChevronRight, ExternalLink, Sparkles, Globe, Database, Shield, Cpu, Wifi, Cloud, Terminal, Layout, Layers, Box, Palette, Pen, Camera, Headphones, Gamepad2, Rocket, Star, Heart, Briefcase, GraduationCap, BookOpen, FileCode, GitBranch, Settings, Wrench, TrendingUp, BarChart3, PieChart, Activity, Target, Flame, Lightbulb, MessageSquare, Share2, Link, Eye, Search } from 'lucide-react';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import LinkComponent from 'next/link';
+import Image from 'next/image';
+
+const iconMap = {
+  Monitor, Server, Smartphone, Code, Music, Video, Users, Award, Calendar, Zap, Mail, Globe,
+  Database, Shield, Cpu, Wifi, Cloud, Terminal, Layout, Layers, Box, Palette, Pen, Camera,
+  Headphones, Gamepad2, Rocket, Star, Heart, Briefcase, GraduationCap, BookOpen, FileCode,
+  GitBranch, Settings, Wrench, TrendingUp, BarChart3, PieChart, Activity, Target, Flame,
+  Lightbulb, MessageSquare, Share2, Link, Eye, Search,
+};
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -24,77 +34,27 @@ const stagger = {
   }
 };
 
-const skills = [
-  { name: 'Next.js', level: 95 },
-  { name: 'React', level: 90 },
-  { name: 'Node.js', level: 88 },
-  { name: 'MongoDB', level: 85 },
-  { name: 'Tailwind CSS', level: 95 },
-  { name: 'M-Pesa API', level: 82 },
-  { name: 'PostgreSQL', level: 78 },
-  { name: 'React Native', level: 75 },
-];
-
-const services = [
-  {
-    icon: Monitor,
-    title: 'Web Applications',
-    desc: 'High-performance, SEO-optimized web apps with Next.js and modern frameworks.',
-    color: 'blue',
-  },
-  {
-    icon: Server,
-    title: 'Backend & APIs',
-    desc: 'Scalable REST APIs, database design, and third-party integrations including M-Pesa.',
-    color: 'violet',
-  },
-  {
-    icon: Smartphone,
-    title: 'Mobile Development',
-    desc: 'Cross-platform mobile applications with React Native and Firebase.',
-    color: 'cyan',
-  },
-];
-
-const experience = [
-  {
-    role: 'Full-Stack Developer',
-    org: 'Freelance & Projects',
-    period: '2024 — Present',
-    desc: 'Building production web applications including EgerTickets, payment integrations, and student platforms.',
-    current: true,
-  },
-  {
-    role: 'Executive Member',
-    org: 'Egerton Engineering Student Association (EESA)',
-    period: '2025 — Present',
-    desc: 'Leading technical initiatives for engineering students, organizing events, and building digital tools.',
-    current: true,
-  },
-  {
-    role: 'First Year Representative',
-    org: 'Cohort Leadership',
-    period: '2025',
-    desc: 'Represented 100+ engineering freshmen in departmental decision-making and academic affairs.',
-    current: false,
-  },
-  {
-    role: 'Content Creator',
-    org: 'YouTube & TikTok',
-    period: '2024 — Present',
-    desc: 'Educating thousands through tech content on @Isa_Moma-003 and engineering tutorials.',
-    current: true,
-  },
-];
-
-const stats = [
-  { value: '10+', label: 'Projects Shipped' },
-  { value: '5K+', label: 'Content Reach' },
-  { value: '2+', label: 'Years Coding' },
-  { value: '3', label: 'Leadership Roles' },
-];
-
 export default function Portfolio() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch('/api/portfolio')
+      .then(res => res.json())
+      .then(setData);
+  }, []);
+
+  if (!data) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-slate-300 border-t-slate-900 rounded-full animate-spin" />
+      </div>
+    );
+  }
+
+  const { hero, stats, services, skills, experience, about, social = [], contact = {}, featuredProject = {} } = data;
+
+  const socialIconMap = { Github, Youtube, Video, Mail, Linkedin, Instagram: Globe, Globe };
+
   return (
     <div className="min-h-screen bg-white text-slate-900">
 
@@ -120,44 +80,43 @@ export default function Portfolio() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600" />
             </span>
-            Available for Work
+            {hero.badge}
           </motion.div>
 
           <motion.h1
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[1.05] mb-6"
             variants={fadeInUp}
           >
-            I build digital
+            {hero.titleLine1}
             <br />
-            <span className="text-gradient">experiences</span> that
+            <span className="text-gradient">{hero.titleHighlight}</span> that
             <br />
-            <span className="text-slate-400">matter.</span>
+            <span className="text-slate-400">{hero.titleEnd}</span>
           </motion.h1>
 
           <motion.p
             className="text-lg md:text-xl text-slate-500 max-w-xl leading-relaxed mb-10"
             variants={fadeInUp}
           >
-            Full-Stack Developer. Electrical Engineering student at Egerton University. 
-            I turn ideas into polished, production-ready software.
+            {hero.subtitle}
           </motion.p>
 
           <motion.div
             className="flex flex-wrap items-center gap-4 mb-16"
             variants={fadeInUp}
           >
-            <Link
+            <LinkComponent
               href="/projects"
               className="inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-3.5 rounded-full font-semibold hover:bg-blue-600 transition-all shadow-lg shadow-slate-900/10 text-sm"
             >
               View My Work <ChevronRight size={15} />
-            </Link>
-            <Link
+            </LinkComponent>
+            <LinkComponent
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold border border-slate-200 hover:border-slate-400 transition-all text-sm"
             >
               Get In Touch
-            </Link>
+            </LinkComponent>
           </motion.div>
 
           {/* Social row */}
@@ -166,23 +125,21 @@ export default function Portfolio() {
             variants={fadeInUp}
           >
             <span className="text-xs text-slate-400 font-medium uppercase tracking-wide mr-1">Follow</span>
-            {[
-              { href: 'https://github.com', icon: Github, label: 'GitHub' },
-              { href: 'https://youtube.com/@Isa_Moma-003', icon: Youtube, label: 'YouTube', color: 'hover:text-red-600 hover:border-red-200 hover:bg-red-50' },
-              { href: 'https://tiktok.com/@isa.moma', icon: Video, label: 'TikTok' },
-              { href: 'mailto:isamoma003@gmail.com', icon: Mail, label: 'Email', color: 'hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50' },
-            ].map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                target={s.href.startsWith('mailto') ? undefined : '_blank'}
-                rel={s.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-                className={`p-2.5 border border-slate-200 rounded-xl hover:bg-slate-50 transition-all ${s.color || ''}`}
-                aria-label={s.label}
-              >
-                <s.icon size={17} />
-              </a>
-            ))}
+            {social.map((s) => {
+              const SIcon = socialIconMap[s.icon] || iconMap[s.icon] || Globe;
+              return (
+                <a
+                  key={s.platform}
+                  href={s.url}
+                  target={s.url?.startsWith('mailto') ? undefined : '_blank'}
+                  rel={s.url?.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+                  className="p-2.5 border border-slate-200 rounded-xl hover:bg-slate-50 transition-all"
+                  aria-label={s.platform}
+                >
+                  <SIcon size={17} />
+                </a>
+              );
+            })}
           </motion.div>
         </motion.div>
       </section>
@@ -220,10 +177,26 @@ export default function Portfolio() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {services.map((s, i) => {
+            const IconComponent = iconMap[s.icon] || Code;
             const colorMap = {
               blue: 'bg-blue-50 text-blue-600 border-blue-100',
               violet: 'bg-violet-50 text-violet-600 border-violet-100',
               cyan: 'bg-cyan-50 text-cyan-600 border-cyan-100',
+              green: 'bg-green-50 text-green-600 border-green-100',
+              red: 'bg-red-50 text-red-600 border-red-100',
+              orange: 'bg-orange-50 text-orange-600 border-orange-100',
+              pink: 'bg-pink-50 text-pink-600 border-pink-100',
+              amber: 'bg-amber-50 text-amber-600 border-amber-100',
+              teal: 'bg-teal-50 text-teal-600 border-teal-100',
+              indigo: 'bg-indigo-50 text-indigo-600 border-indigo-100',
+              emerald: 'bg-emerald-50 text-emerald-600 border-emerald-100',
+              rose: 'bg-rose-50 text-rose-600 border-rose-100',
+              sky: 'bg-sky-50 text-sky-600 border-sky-100',
+              lime: 'bg-lime-50 text-lime-600 border-lime-100',
+              fuchsia: 'bg-fuchsia-50 text-fuchsia-600 border-fuchsia-100',
+              yellow: 'bg-yellow-50 text-yellow-600 border-yellow-100',
+              slate: 'bg-slate-100 text-slate-600 border-slate-200',
+              purple: 'bg-purple-50 text-purple-600 border-purple-100',
             };
             return (
               <motion.div
@@ -232,7 +205,7 @@ export default function Portfolio() {
                 variants={fadeInUp}
               >
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 border ${colorMap[s.color]}`}>
-                  <s.icon size={22} />
+                  <IconComponent size={22} />
                 </div>
                 <h3 className="text-lg font-bold mb-2">{s.title}</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">{s.desc}</p>
@@ -304,44 +277,47 @@ export default function Portfolio() {
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/20 text-white text-xs font-bold rounded-full backdrop-blur-sm">
                   <Sparkles size={11} /> Featured
                 </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-green-400/20 text-green-100 text-xs font-bold rounded-full backdrop-blur-sm border border-green-400/30">
-                  <span className="w-2 h-2 rounded-full bg-green-300 animate-pulse inline-block" />
-                  Production
-                </span>
+                {featuredProject.status && (
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-green-400/20 text-green-100 text-xs font-bold rounded-full backdrop-blur-sm border border-green-400/30">
+                    <span className="w-2 h-2 rounded-full bg-green-300 animate-pulse inline-block" />
+                    {featuredProject.status}
+                  </span>
+                )}
               </div>
-              <h3 className="text-3xl md:text-4xl font-black">EgerTickets</h3>
-              <p className="text-blue-100 font-medium mt-1">Egerton University Event Ticketing Platform</p>
+              <h3 className="text-3xl md:text-4xl font-black">{featuredProject.title}</h3>
+              <p className="text-blue-100 font-medium mt-1">{featuredProject.subtitle}</p>
             </div>
           </div>
 
           {/* Content body */}
           <div className="p-8 md:p-10">
             <p className="text-slate-600 leading-relaxed mb-7 max-w-2xl">
-              Egerton University&apos;s official event discovery and booking platform. Students browse concerts, workshops, conferences, 
-              and sports — with secure checkout, an AI assistant chatbot, real-time dashboards, and a full organizer portal.
+              {featuredProject.description}
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {['Next.js', 'Tailwind CSS', 'Vercel', 'AI Chatbot', 'Authentication'].map((tech) => (
+              {(featuredProject.tech || []).map((tech) => (
                 <span key={tech} className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full">
                   {tech}
                 </span>
               ))}
             </div>
             <div className="flex flex-wrap gap-4">
-              <a
-                href="https://egertickets.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-slate-900 text-white px-7 py-3 rounded-full font-semibold hover:bg-blue-600 transition-all text-sm shadow-md"
-              >
-                Visit Live Site <ExternalLink size={14} />
-              </a>
-              <Link
+              {featuredProject.link && (
+                <a
+                  href={featuredProject.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-slate-900 text-white px-7 py-3 rounded-full font-semibold hover:bg-blue-600 transition-all text-sm shadow-md"
+                >
+                  Visit Live Site <ExternalLink size={14} />
+                </a>
+              )}
+              <LinkComponent
                 href="/projects"
                 className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold border border-slate-200 hover:border-slate-400 transition-all text-sm"
               >
                 All Projects <ChevronRight size={14} />
-              </Link>
+              </LinkComponent>
             </div>
           </div>
         </motion.div>
@@ -404,44 +380,25 @@ export default function Portfolio() {
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {[
-            {
-              icon: Code,
-              title: 'The Developer',
-              desc: 'Specializing in Next.js, Node.js, and MongoDB. Building payment integrations and platforms used by real users across Kenya.',
-              gradient: 'from-blue-500 to-cyan-500',
-              bg: 'bg-blue-50',
-            },
-            {
-              icon: Music,
-              title: 'The Performer',
-              desc: 'Active member of Egerton Salsa Lite dance crew. The discipline of choreography translates directly into clean, structured code.',
-              gradient: 'from-violet-500 to-pink-500',
-              bg: 'bg-violet-50',
-            },
-            {
-              icon: Video,
-              title: 'The Creator',
-              desc: 'Educating thousands through tech content on @Isa_Moma-003 and @isa_moma_004. Engineering education meets creative storytelling.',
-              gradient: 'from-red-500 to-orange-500',
-              bg: 'bg-red-50',
-            },
-          ].map((card, i) => (
-            <motion.div
-              key={i}
-              className="relative p-7 rounded-2xl border border-slate-100 bg-white card-hover group overflow-hidden"
-              variants={fadeInUp}
-            >
-              <div className={`absolute inset-0 ${card.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-              <div className="relative">
-                <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${card.gradient} flex items-center justify-center mb-5 text-white`}>
-                  <card.icon size={20} />
+          {about.map((card, i) => {
+            const IconComponent = iconMap[card.icon] || Code;
+            return (
+              <motion.div
+                key={i}
+                className="relative p-7 rounded-2xl border border-slate-100 bg-white card-hover group overflow-hidden"
+                variants={fadeInUp}
+              >
+                <div className={`absolute inset-0 ${card.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                <div className="relative">
+                  <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${card.gradient} flex items-center justify-center mb-5 text-white`}>
+                    <IconComponent size={20} />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">{card.title}</h3>
+                  <p className="text-sm text-slate-500 leading-relaxed">{card.desc}</p>
                 </div>
-                <h3 className="text-lg font-bold mb-2">{card.title}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">{card.desc}</p>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </motion.section>
 
@@ -463,20 +420,22 @@ export default function Portfolio() {
               Got a project idea, need a developer, or want to collaborate? I&apos;m always open to new opportunities.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link
+              <LinkComponent
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-3.5 rounded-full font-semibold hover:bg-blue-500 transition-all text-sm shadow-lg shadow-blue-600/20"
               >
                 <Mail size={15} /> Get In Touch
-              </Link>
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold border border-slate-600 text-slate-300 hover:border-slate-400 hover:text-white transition-all text-sm"
-              >
-                <Github size={15} /> GitHub
-              </a>
+              </LinkComponent>
+              {social.find(s => s.icon === 'Github') && (
+                <a
+                  href={social.find(s => s.icon === 'Github').url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold border border-slate-600 text-slate-300 hover:border-slate-400 hover:text-white transition-all text-sm"
+                >
+                  <Github size={15} /> GitHub
+                </a>
+              )}
             </div>
           </div>
         </motion.div>

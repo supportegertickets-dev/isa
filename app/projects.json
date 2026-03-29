@@ -3,7 +3,13 @@
     "title": "EgerTickets",
     "subtitle": "Egerton University Event Ticketing Platform",
     "desc": "Egerton University's official event ticketing and discovery platform. Students can browse and book campus events across music, sports, concerts, conferences, and workshops — with secure checkout in seconds. Features an AI assistant chatbot, real-time event dashboards, an organizer portal, and a full booking management system.",
-    "tech": ["Next.js", "Tailwind CSS", "Vercel", "AI Chatbot", "Authentication"],
+    "tech": [
+      "Next.js",
+      "Tailwind CSS",
+      "Vercel",
+      "AI Chatbot",
+      "Authentication"
+    ],
     "link": "https://egertickets.vercel.app",
     "featured": true,
     "status": "Live",
@@ -13,15 +19,25 @@
     "title": "M-Pesa Ticketing System",
     "subtitle": "Mobile Payment Integration",
     "desc": "Full-stack payment integration for events using Next.js, Node.js, and MongoDB. Handles secure M-Pesa STK Push transactions, callback processing, and real-time payment confirmation for Kenyan users.",
-    "tech": ["Next.js", "Node.js", "MongoDB", "M-Pesa API"],
+    "tech": [
+      "Next.js",
+      "Node.js",
+      "MongoDB",
+      "M-Pesa API"
+    ],
     "link": "#",
-    "category": "FinTech"
+    "category": "FinTech",
+    "image": "https://res.cloudinary.com/dijx44yas/image/upload/v1774788870/y1rgj5hlws6ulmxrqwpz.jpg"
   },
   {
     "title": "EESA Dashboard",
     "subtitle": "Engineering Student Association Portal",
     "desc": "Association management system for engineering students. Features member tracking, event management, communication tools, and committee coordination for EESA operations.",
-    "tech": ["React", "Express", "PostgreSQL"],
+    "tech": [
+      "React",
+      "Express",
+      "PostgreSQL"
+    ],
     "link": "#",
     "category": "Dashboard"
   },
@@ -29,7 +45,11 @@
     "title": "Salsa Rhythm App",
     "subtitle": "Dance Progress Tracker",
     "desc": "A creative mobile app for tracking dance progress with video tutorials, progress logging, social sharing, and community features for salsa enthusiasts.",
-    "tech": ["React Native", "Firebase", "Node.js"],
+    "tech": [
+      "React Native",
+      "Firebase",
+      "Node.js"
+    ],
     "link": "#",
     "category": "Mobile"
   }

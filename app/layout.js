@@ -1,5 +1,6 @@
 import './globals.css';
 import Header from './components/Header';
+import { AuthProvider } from './context/AuthContext';
 
 export const metadata = {
   title: 'Isaiah Maosa — Full-Stack Developer & Engineer',
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="min-h-screen bg-white text-slate-900">
+        <AuthProvider>
         <Header />
 
         <main className="pt-16">{children}</main>
@@ -67,6 +69,7 @@ export default function RootLayout({ children }) {
             </div>
           </div>
         </footer>
+        </AuthProvider>
       </body>
     </html>
   );

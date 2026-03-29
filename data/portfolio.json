@@ -1,0 +1,182 @@
+{
+  "hero": {
+    "badge": "Available for Work",
+    "titleLine1": "I build digital ",
+    "titleHighlight": "experiences",
+    "titleEnd": "that matter.",
+    "subtitle": "Full-Stack Developer. Electrical Engineering student at Egerton University. I turn ideas into polished, production-ready software.",
+    "profileImage": "https://res.cloudinary.com/dijx44yas/image/upload/v1774788688/fpurkdqzwdkpebgfs1fx.jpg"
+  },
+  "stats": [
+    {
+      "value": "5K+",
+      "label": "Content Reach"
+    },
+    {
+      "value": "2+",
+      "label": "Years Coding"
+    },
+    {
+      "value": "3",
+      "label": "Leadership Roles"
+    }
+  ],
+  "services": [
+    {
+      "title": "Web Applications",
+      "desc": "High-performance, SEO-optimized web apps with Next.js and modern frameworks.",
+      "icon": "Users",
+      "color": "cyan"
+    },
+    {
+      "title": "Backend & APIs",
+      "desc": "Scalable REST APIs, database design, and third-party integrations including M-Pesa.",
+      "icon": "Server",
+      "color": "violet"
+    },
+    {
+      "title": "Mobile Development",
+      "desc": "Cross-platform mobile applications with React Native and Firebase.",
+      "icon": "Smartphone",
+      "color": "cyan"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Next.js",
+      "level": 95
+    },
+    {
+      "name": "React",
+      "level": 90
+    },
+    {
+      "name": "Node.js",
+      "level": 88
+    },
+    {
+      "name": "MongoDB",
+      "level": 85
+    },
+    {
+      "name": "Tailwind CSS",
+      "level": 95
+    },
+    {
+      "name": "M-Pesa API",
+      "level": 82
+    },
+    {
+      "name": "PostgreSQL",
+      "level": 78
+    },
+    {
+      "name": "React Native",
+      "level": 75
+    }
+  ],
+  "experience": [
+    {
+      "role": "Full-Stack Developer",
+      "org": "Freelance & Projects",
+      "period": "2024 — Present",
+      "desc": "Building production web applications including EgerTickets, payment integrations, and student platforms.",
+      "current": true
+    },
+    {
+      "role": "Executive Member",
+      "org": "Egerton Engineering Student Association (EESA)",
+      "period": "2025 — Present",
+      "desc": "Leading technical initiatives for engineering students, organizing events, and building digital tools.",
+      "current": true
+    },
+    {
+      "role": "First Year Representative",
+      "org": "Cohort Leadership",
+      "period": "2025",
+      "desc": "Represented 100+ engineering freshmen in departmental decision-making and academic affairs.",
+      "current": false
+    },
+    {
+      "role": "Content Creator",
+      "org": "YouTube & TikTok",
+      "period": "2024 — Present",
+      "desc": "Educating thousands through tech content on @Isa_Moma-003 and engineering tutorials.",
+      "current": true
+    }
+  ],
+  "about": [
+    {
+      "title": "The Developer",
+      "desc": "Specializing in Next.js, Node.js, and MongoDB. Building payment integrations and platforms used by real users across Kenya.",
+      "icon": "Code",
+      "gradient": "from-blue-500 to-cyan-500",
+      "bg": "bg-blue-50"
+    },
+    {
+      "title": "The Performer",
+      "desc": "Active member of Egerton Salsa Lite dance crew. The discipline of choreography translates directly into clean, structured code.",
+      "icon": "Music",
+      "gradient": "from-violet-500 to-pink-500",
+      "bg": "bg-violet-50"
+    },
+    {
+      "title": "The Creator",
+      "desc": "Educating thousands through tech content on @Isa_Moma-003 and @isa_moma_004. Engineering education meets creative storytelling.",
+      "icon": "Video",
+      "gradient": "from-red-500 to-orange-500",
+      "bg": "bg-red-50"
+    }
+  ],
+  "social": [
+    {
+      "platform": "GitHub",
+      "icon": "Github",
+      "handle": "IsaMoma",
+      "url": "https://github.com"
+    },
+    {
+      "platform": "YouTube",
+      "icon": "Youtube",
+      "handle": "@Isa_Moma-003",
+      "url": "https://youtube.com/@Isa_Moma-003"
+    },
+    {
+      "platform": "TikTok",
+      "icon": "Video",
+      "handle": "@isa.moma",
+      "url": "https://tiktok.com/@isa.moma"
+    },
+    {
+      "platform": "Instagram",
+      "icon": "Instagram",
+      "handle": "@isa_moma_",
+      "url": "https://instagram.com/isa_moma_"
+    },
+    {
+      "platform": "Email",
+      "icon": "Mail",
+      "handle": "isamoma003@gmail.com",
+      "url": "mailto:isamoma003@gmail.com"
+    }
+  ],
+  "contact": {
+    "email": "isamoma003@gmail.com",
+    "phone": "+254 720 879 846",
+    "location": "Egerton University, Kenya"
+  },
+  "featuredProject": {
+    "title": "EgerTickets",
+    "subtitle": "Egerton University Event Ticketing Platform",
+    "description": "Egerton University's official event discovery and booking platform. Students browse concerts, workshops, conferences, and sports — with secure checkout, an AI assistant chatbot, real-time dashboards, and a full organizer portal.",
+    "tech": [
+      "Next.js",
+      "Tailwind CSS",
+      "Vercel",
+      "AI Chatbot",
+      "Authentication"
+    ],
+    "link": "https://egertickets.vercel.app",
+    "status": "Production"
+  }
+}

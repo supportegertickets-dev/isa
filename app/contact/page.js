@@ -1,8 +1,8 @@
 'use client';
 
-import { Mail, Phone, MapPin, Instagram, Youtube, Github, Video, Send, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Youtube, Github, Video, Send, ArrowUpRight, Globe } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -14,21 +14,33 @@ const stagger = {
   animate: { transition: { staggerChildren: 0.08 } }
 };
 
-const contactInfo = [
-  { icon: Mail, label: 'Email', value: 'isamoma003@gmail.com', href: 'mailto:isamoma003@gmail.com' },
-  { icon: Phone, label: 'Phone', value: '+254 720 879 846', href: 'tel:+254720879846' },
-  { icon: MapPin, label: 'Location', value: 'Egerton University, Kenya', href: null },
-];
-
-const socials = [
-  { icon: Youtube, label: 'YouTube', handle: '@Isa_Moma-003', href: 'https://youtube.com/@Isa_Moma-003', color: 'hover:bg-red-50 hover:text-red-600 hover:border-red-200' },
-  { icon: Video, label: 'TikTok', handle: '@isa.moma', href: 'https://tiktok.com/@isa.moma', color: 'hover:bg-slate-100 hover:text-slate-900 hover:border-slate-300' },
-  { icon: Instagram, label: 'Instagram', handle: '@isa_moma_', href: 'https://instagram.com/isa_moma_', color: 'hover:bg-pink-50 hover:text-pink-600 hover:border-pink-200' },
-  { icon: Github, label: 'GitHub', handle: 'IsaMoma', href: 'https://github.com', color: 'hover:bg-slate-100 hover:text-slate-900 hover:border-slate-300' },
-];
+const socialIconMap = { Github, Youtube, Video, Mail, Instagram, Globe };
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch('/api/portfolio')
+      .then(r => r.json())
+      .then(setData);
+  }, []);
+
+  if (!data) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-slate-300 border-t-slate-900 rounded-full animate-spin" />
+      </div>
+    );
+  }
+
+  const { contact = {}, social = [] } = data;
+
+  const contactInfo = [
+    { icon: Mail, label: 'Email', value: contact.email, href: contact.email ? `mailto:${contact.email}` : null },
+    { icon: Phone, label: 'Phone', value: contact.phone, href: contact.phone ? `tel:${contact.phone.replace(/\s/g, '')}` : null },
+    { icon: MapPin, label: 'Location', value: contact.location, href: null },
+  ].filter(item => item.value);
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -57,7 +69,7 @@ export default function Contact() {
           {/* Contact Form */}
           <motion.div className="lg:col-span-3" variants={fadeInUp}>
             <form
-              action={`mailto:isamoma003@gmail.com`}
+              action={`mailto:${contact.email || ''}`}
               method="GET"
               className="space-y-5"
             >
@@ -138,22 +150,25 @@ export default function Contact() {
             <div>
               <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-5">Socials</h3>
               <div className="space-y-2">
-                {socials.map((s) => (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`flex items-center gap-3 px-4 py-3 rounded-xl border border-slate-100 transition-all group ${s.color}`}
-                  >
-                    <s.icon size={18} />
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-semibold">{s.label}</p>
-                      <p className="text-xs text-slate-400">{s.handle}</p>
-                    </div>
-                    <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition" />
-                  </a>
-                ))}
+                {social.filter(s => !s.url?.startsWith('mailto')).map((s) => {
+                  const SIcon = socialIconMap[s.icon] || Globe;
+                  return (
+                    <a
+                      key={s.platform}
+                      href={s.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 px-4 py-3 rounded-xl border border-slate-100 transition-all group hover:bg-slate-50 hover:border-slate-200"
+                    >
+                      <SIcon size={18} />
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-semibold">{s.platform}</p>
+                        <p className="text-xs text-slate-400">{s.handle}</p>
+                      </div>
+                      <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition" />
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </motion.div>

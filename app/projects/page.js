@@ -1,9 +1,10 @@
 'use client';
 
-import projectsData from '../projects.json';
+import { useState, useEffect } from 'react';
 import { ExternalLink, Zap, ArrowUpRight, Sparkles, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -16,6 +17,22 @@ const stagger = {
 };
 
 export default function Projects() {
+  const [projectsData, setProjectsData] = useState(null);
+
+  useEffect(() => {
+    fetch('/api/projects')
+      .then(res => res.json())
+      .then(setProjectsData);
+  }, []);
+
+  if (!projectsData) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-slate-300 border-t-slate-900 rounded-full animate-spin" />
+      </div>
+    );
+  }
+
   const featured = projectsData.filter((p) => p.featured);
   const others = projectsData.filter((p) => !p.featured);
 
@@ -73,6 +90,11 @@ export default function Projects() {
 
             {/* Content body */}
             <div className="p-8 md:p-10">
+              {proj.image && (
+                <div className="rounded-xl overflow-hidden border border-slate-100 mb-7">
+                  <img src={proj.image} alt={proj.title} className="w-full h-56 md:h-72 object-cover" />
+                </div>
+              )}
               <p className="text-slate-600 leading-relaxed mb-7 max-w-2xl">
                 {proj.desc}
               </p>
@@ -118,6 +140,11 @@ export default function Projects() {
                   className="p-7 rounded-2xl border border-slate-100 bg-white card-hover group"
                   variants={fadeInUp}
                 >
+                  {proj.image && (
+                    <div className="rounded-xl overflow-hidden border border-slate-100 mb-5 -mx-2 -mt-2">
+                      <img src={proj.image} alt={proj.title} className="w-full h-40 object-cover" />
+                    </div>
+                  )}
                   <div className="flex items-center gap-3 mb-4">
                     {proj.category && (
                       <span className="px-2.5 py-0.5 bg-slate-100 text-slate-500 text-[10px] font-bold rounded-full uppercase tracking-wider">
