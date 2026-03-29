@@ -1,7 +1,7 @@
 {
   "name": "isaiah-portfolio",
   "version": "0.1.0",
-  "type":"module",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,6 +12,7 @@
   "dependencies": {
     "framer-motion": "latest",
     "lucide-react": "latest",
+    "mongodb": "^7.1.1",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"

@@ -1,13 +1,10 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { readData } from '../../lib/storage';
 
-const DATA_PATH = path.join(process.cwd(), 'data', 'portfolio.json');
-
-function getContactEmail() {
+async function getContactEmail() {
   try {
-    const data = JSON.parse(fs.readFileSync(DATA_PATH, 'utf-8'));
-    return data.contact?.email || process.env.ADMIN_EMAIL;
+    const data = await readData('portfolio');
+    return data?.contact?.email || process.env.ADMIN_EMAIL;
   } catch {
     return process.env.ADMIN_EMAIL;
   }
@@ -40,7 +37,7 @@ export async function POST(request) {
       return NextResponse.json({ error: 'Email service not configured' }, { status: 500 });
     }
 
-    const recipientEmail = getContactEmail();
+    const recipientEmail = await getContactEmail();
     const safeName = escapeHtml(name);
     const safeEmail = escapeHtml(email);
     const safeMessage = escapeHtml(message);
