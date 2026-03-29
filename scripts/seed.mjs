@@ -34,7 +34,7 @@ async function seed() {
       const data = JSON.parse(fs.readFileSync(file.path, 'utf-8'));
       await collection.replaceOne(
         { _key: file.key },
-        { _key: file.key, ...data },
+        { _key: file.key, _data: data },
         { upsert: true }
       );
       console.log(`✅ Seeded "${file.key}" from ${path.relative(root, file.path)}`);

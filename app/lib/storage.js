@@ -13,10 +13,7 @@ async function getDb() {
 export async function readData(key) {
   const db = await getDb();
   const doc = await db.collection('siteData').findOne({ _key: key });
-  if (doc) {
-    const { _id, _key, ...data } = doc;
-    return data;
-  }
+  if (doc) return doc._data ?? null;
   return null;
 }
 
@@ -24,7 +21,7 @@ export async function writeData(key, data) {
   const db = await getDb();
   await db.collection('siteData').replaceOne(
     { _key: key },
-    { _key: key, ...data },
+    { _key: key, _data: data },
     { upsert: true }
   );
 }
