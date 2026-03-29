@@ -65,6 +65,12 @@
       "namedRegex": "^/api/auth/me(?:/)?$"
     },
     {
+      "page": "/api/contact",
+      "regex": "^/api/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/contact(?:/)?$"
+    },
+    {
       "page": "/api/portfolio",
       "regex": "^/api/portfolio(?:/)?$",
       "routeKeys": {},

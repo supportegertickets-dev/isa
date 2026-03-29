@@ -5,6 +5,7 @@
   "/api/auth/login/route": "/api/auth/login",
   "/api/auth/logout/route": "/api/auth/logout",
   "/api/auth/me/route": "/api/auth/me",
+  "/api/contact/route": "/api/contact",
   "/api/portfolio/route": "/api/portfolio",
   "/api/projects/route": "/api/projects",
   "/contact/page": "/contact",

@@ -19,6 +19,8 @@ const socialIconMap = { Github, Youtube, Video, Mail, Instagram, Globe };
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [data, setData] = useState(null);
+  const [sending, setSending] = useState(false);
+  const [toast, setToast] = useState(null);
 
   useEffect(() => {
     fetch('/api/portfolio')
@@ -46,6 +48,34 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) {
+      setToast({ text: 'Please fill in all fields', type: 'error' });
+      setTimeout(() => setToast(null), 4000);
+      return;
+    }
+    setSending(true);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const result = await res.json();
+      if (res.ok) {
+        setToast({ text: 'Message sent successfully!', type: 'success' });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setToast({ text: result.error || 'Failed to send message', type: 'error' });
+      }
+    } catch {
+      setToast({ text: 'Something went wrong. Please try again.', type: 'error' });
+    }
+    setSending(false);
+    setTimeout(() => setToast(null), 5000);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <motion.div
@@ -69,8 +99,7 @@ export default function Contact() {
           {/* Contact Form */}
           <motion.div className="lg:col-span-3" variants={fadeInUp}>
             <form
-              action={`mailto:${contact.email || ''}`}
-              method="GET"
+              onSubmit={handleSubmit}
               className="space-y-5"
             >
               <div className="grid sm:grid-cols-2 gap-5">
@@ -83,6 +112,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Your name"
+                    required
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition bg-white"
                   />
                 </div>
@@ -95,6 +125,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="you@example.com"
+                    required
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition bg-white"
                   />
                 </div>
@@ -103,20 +134,41 @@ export default function Contact() {
                 <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">Message</label>
                 <textarea
                   id="message"
-                  name="body"
+                  name="message"
                   rows={6}
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Tell me about your project or idea..."
+                  required
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition bg-white resize-none"
                 />
               </div>
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-3.5 rounded-full font-semibold hover:bg-blue-600 transition-all text-sm shadow-md"
+                disabled={sending}
+                className="inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-3.5 rounded-full font-semibold hover:bg-blue-600 transition-all text-sm shadow-md disabled:opacity-50"
               >
-                <Send size={14} /> Send Message
+                {sending ? (
+                  <>
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send size={14} /> Send Message
+                  </>
+                )}
               </button>
+
+              {toast && (
+                <div className={`flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium ${
+                  toast.type === 'success'
+                    ? 'bg-green-50 text-green-700 border border-green-200'
+                    : 'bg-red-50 text-red-700 border border-red-200'
+                }`}>
+                  {toast.type === 'success' ? '✓' : '!'} {toast.text}
+                </div>
+              )}
             </form>
           </motion.div>
 
