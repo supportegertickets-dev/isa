@@ -65,7 +65,7 @@ export default function RootLayout({ children }) {
             {/* Bottom bar */}
             <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
               <p className="text-xs text-slate-400">© 2026 Isaiah Maosa. All rights reserved.</p>
-              <p className="text-xs text-slate-400">Built with Next.js &amp; Tailwind CSS</p>
+              <p className="text-xs text-slate-400">Built with passion. If you want yours, contact me.</p>
             </div>
           </div>
         </footer>

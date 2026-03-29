@@ -10,7 +10,7 @@ export default function ImageUpload({ value, onChange, label }) {
 
   const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
   const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
-  const isConfigured = cloudName && cloudName !== 'your_cloud_name_here' && uploadPreset && uploadPreset !== 'your_upload_preset_here';
+  const isConfigured = cloudName && cloudName !== 'dijx44yas' && uploadPreset && uploadPreset !== '';
 
   const handleUpload = async (e) => {
     const file = e.target.files?.[0];
