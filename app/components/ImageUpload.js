@@ -10,7 +10,7 @@ export default function ImageUpload({ value, onChange, label }) {
 
   const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
   const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
-  const isConfigured = cloudName && cloudName !== 'dijx44yas' && uploadPreset && uploadPreset !== '';
+  const isConfigured = !!cloudName && !!uploadPreset;
 
   const handleUpload = async (e) => {
     const file = e.target.files?.[0];
@@ -55,26 +55,22 @@ export default function ImageUpload({ value, onChange, label }) {
       )}
 
       {value ? (
-        <div className="relative group rounded-xl overflow-hidden border border-slate-200 bg-slate-50">
+        <div className="relative rounded-xl overflow-hidden border border-slate-200 bg-slate-50">
           <img src={value} alt="" className="w-full h-48 object-cover" />
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition flex items-center justify-center">
-            <div className="opacity-0 group-hover:opacity-100 transition flex gap-2">
-              <button
-                type="button"
-                onClick={() => inputRef.current?.click()}
-                className="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-xs font-semibold shadow-md"
-              >
-                Replace
-              </button>
-              <button
-                type="button"
-                onClick={() => onChange('')}
-                className="p-1.5 bg-red-500 text-white rounded-lg shadow-md"
-              >
-                <X size={14} />
-              </button>
-            </div>
-          </div>
+          <button
+            type="button"
+            onClick={() => onChange('')}
+            className="absolute top-2 right-2 p-1.5 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition"
+          >
+            <X size={14} />
+          </button>
+          <button
+            type="button"
+            onClick={() => inputRef.current?.click()}
+            className="absolute bottom-2 right-2 px-3 py-1.5 bg-white text-slate-700 rounded-lg text-xs font-semibold shadow-md hover:bg-slate-50 transition"
+          >
+            Replace
+          </button>
         </div>
       ) : (
         <button
