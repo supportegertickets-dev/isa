@@ -192,7 +192,11 @@ export default function Admin() {
     );
   }
 
-  if (!isAuthenticated) return null;
+  if (!isAuthenticated) return (
+    <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+      <div className="w-8 h-8 border-2 border-slate-300 border-t-blue-600 rounded-full animate-spin" />
+    </div>
+  );
 
   const handleSave = activeTab === 'projects' ? saveProjects : savePortfolio;
 
@@ -221,7 +225,7 @@ export default function Admin() {
               disabled={saving}
               className="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-2 rounded-xl text-sm font-semibold hover:bg-blue-700 transition disabled:opacity-50"
             >
-              <Save size={14} /> {saving ? 'Saving...' : 'Save'}
+              {saving ? <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" /> : <Save size={14} />} {saving ? 'Saving...' : 'Save'}
             </button>
             <button
               onClick={() => { logout(); router.push('/'); }}

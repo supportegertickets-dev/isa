@@ -31,7 +31,11 @@ export default function Login() {
     setSubmitting(false);
   };
 
-  if (loading) return null;
+  if (loading) return (
+    <div className="min-h-[80vh] flex items-center justify-center">
+      <div className="w-8 h-8 border-2 border-slate-300 border-t-slate-900 rounded-full animate-spin" />
+    </div>
+  );
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center px-6">
@@ -88,7 +92,11 @@ export default function Login() {
             disabled={submitting}
             className="w-full flex items-center justify-center gap-2 bg-slate-900 text-white py-3 rounded-xl font-semibold hover:bg-blue-600 transition text-sm disabled:opacity-50"
           >
-            {submitting ? 'Signing in...' : <><span>Sign In</span> <ArrowRight size={14} /></>}
+            {submitting ? (
+              <><div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" /> Signing in...</>
+            ) : (
+              <><span>Sign In</span> <ArrowRight size={14} /></>
+            )}
           </button>
         </form>
 
