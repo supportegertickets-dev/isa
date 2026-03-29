@@ -1,26 +1,164 @@
-export const metadata = { title: "Contact Isaiah Maosa" };
+'use client';
+
+import { Mail, Phone, MapPin, Instagram, Youtube, Github, Video, Send, ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.4 }
+};
+
+const stagger = {
+  animate: { transition: { staggerChildren: 0.08 } }
+};
+
+const contactInfo = [
+  { icon: Mail, label: 'Email', value: 'isamoma003@gmail.com', href: 'mailto:isamoma003@gmail.com' },
+  { icon: Phone, label: 'Phone', value: '+254 720 879 846', href: 'tel:+254720879846' },
+  { icon: MapPin, label: 'Location', value: 'Egerton University, Kenya', href: null },
+];
+
+const socials = [
+  { icon: Youtube, label: 'YouTube', handle: '@Isa_Moma-003', href: 'https://youtube.com/@Isa_Moma-003', color: 'hover:bg-red-50 hover:text-red-600 hover:border-red-200' },
+  { icon: Video, label: 'TikTok', handle: '@isa.moma', href: 'https://tiktok.com/@isa.moma', color: 'hover:bg-slate-100 hover:text-slate-900 hover:border-slate-300' },
+  { icon: Instagram, label: 'Instagram', handle: '@isa_moma_', href: 'https://instagram.com/isa_moma_', color: 'hover:bg-pink-50 hover:text-pink-600 hover:border-pink-200' },
+  { icon: Github, label: 'GitHub', handle: 'IsaMoma', href: 'https://github.com', color: 'hover:bg-slate-100 hover:text-slate-900 hover:border-slate-300' },
+];
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
   return (
-    <div className="max-w-xl mx-auto p-12 text-center">
-      <h1 className="text-4xl font-black mb-8">Let's Connect</h1>
-      <div className="space-y-6 text-lg">
-        <p>
-          <strong>Phone:</strong> +254 720 879 846
-        </p>
-        <p>
-          <strong>Email:</strong> isamoma003@gmail.com
-        </p>
-        <p>
-          <strong>Instagram:</strong> @isa_moma_
-        </p>
-        <p>
-          <strong>Website:</strong> isamoma.vercel.app
-        </p>
-      </div>
-      <a href="/" className="inline-block mt-8 text-blue-600 font-bold hover:underline">
-         Back Home
-      </a>
+    <div className="min-h-screen bg-white">
+      <motion.div
+        className="max-w-6xl mx-auto px-6 py-16 md:py-24"
+        initial="initial"
+        animate="animate"
+        variants={stagger}
+      >
+        {/* Header */}
+        <motion.div className="mb-16" variants={fadeInUp}>
+          <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Contact</p>
+          <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-4">
+            Let&apos;s Work Together
+          </h1>
+          <p className="text-lg text-slate-500 max-w-lg">
+            Whether you have a project idea, collaboration proposal, or just want to say hi — I&apos;d love to hear from you.
+          </p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
+          {/* Contact Form */}
+          <motion.div className="lg:col-span-3" variants={fadeInUp}>
+            <form
+              action={`mailto:isamoma003@gmail.com`}
+              method="GET"
+              className="space-y-5"
+            >
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your name"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition bg-white"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="you@example.com"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition bg-white"
+                  />
+                </div>
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">Message</label>
+                <textarea
+                  id="message"
+                  name="body"
+                  rows={6}
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Tell me about your project or idea..."
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition bg-white resize-none"
+                />
+              </div>
+              <button
+                type="submit"
+                className="inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-3.5 rounded-full font-semibold hover:bg-blue-600 transition-all text-sm shadow-md"
+              >
+                <Send size={14} /> Send Message
+              </button>
+            </form>
+          </motion.div>
+
+          {/* Sidebar Info */}
+          <motion.div className="lg:col-span-2 space-y-8" variants={fadeInUp}>
+            {/* Contact Details */}
+            <div>
+              <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-5">Reach Me At</h3>
+              <div className="space-y-4">
+                {contactInfo.map((item) => (
+                  <div key={item.label} className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center shrink-0">
+                      <item.icon size={17} className="text-slate-600" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-slate-400 font-medium">{item.label}</p>
+                      {item.href ? (
+                        <a href={item.href} className="text-sm font-semibold text-slate-900 hover:text-blue-600 transition">
+                          {item.value}
+                        </a>
+                      ) : (
+                        <p className="text-sm font-semibold text-slate-900">{item.value}</p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div>
+              <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-5">Socials</h3>
+              <div className="space-y-2">
+                {socials.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center gap-3 px-4 py-3 rounded-xl border border-slate-100 transition-all group ${s.color}`}
+                  >
+                    <s.icon size={18} />
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-semibold">{s.label}</p>
+                      <p className="text-xs text-slate-400">{s.handle}</p>
+                    </div>
+                    <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition" />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </motion.div>
     </div>
   );
 }

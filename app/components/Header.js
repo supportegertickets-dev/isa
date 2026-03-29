@@ -2,12 +2,19 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 export default function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const navItems = [
     { href: '/', label: 'Home' },
@@ -16,55 +23,77 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur">
-      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="font-bold text-xl tracking-tight">
-          ISAIAH MAOSA
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-white/80 backdrop-blur-xl border-b border-slate-200/60 shadow-sm'
+          : 'bg-transparent border-b border-transparent'
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-violet-600 flex items-center justify-center text-white text-xs font-black">
+            IM
+          </div>
+          <span className="font-bold text-lg tracking-tight hidden sm:block">
+            Isaiah Maosa
+          </span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-1 text-sm font-medium">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`hover:text-blue-600 transition ${
-                pathname === item.href ? 'text-blue-600 font-semibold' : ''
+              className={`px-4 py-2 rounded-full transition-all ${
+                pathname === item.href
+                  ? 'bg-slate-900 text-white'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
               }`}
             >
               {item.label}
             </Link>
           ))}
+          <span className="w-px h-6 bg-slate-200 mx-2" />
           <a
             href="https://youtube.com/@Isa_Moma-003"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-red-600 transition"
+            className="px-4 py-2 rounded-full text-slate-600 hover:text-red-600 hover:bg-red-50 transition-all"
           >
             YouTube
+          </a>
+          <a
+            href="/contact"
+            className="ml-2 inline-flex items-center gap-1.5 px-5 py-2 bg-blue-600 text-white text-sm font-semibold rounded-full hover:bg-blue-700 transition-all shadow-md shadow-blue-200/50"
+          >
+            Hire Me <ArrowUpRight size={13} />
           </a>
         </nav>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2"
+          className="md:hidden p-2 rounded-xl hover:bg-slate-100 transition"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-slate-100">
-          <nav className="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-4 text-sm font-medium">
+        <div className="md:hidden bg-white/95 backdrop-blur-xl border-t border-slate-100 shadow-lg">
+          <nav className="max-w-6xl mx-auto px-6 py-6 flex flex-col gap-1">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`hover:text-blue-600 transition ${
-                  pathname === item.href ? 'text-blue-600 font-semibold' : ''
+                className={`px-4 py-3 rounded-xl transition-all text-base font-medium ${
+                  pathname === item.href
+                    ? 'bg-slate-900 text-white'
+                    : 'text-slate-700 hover:bg-slate-100'
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -75,10 +104,17 @@ export default function Header() {
               href="https://youtube.com/@Isa_Moma-003"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-red-600 transition"
+              className="px-4 py-3 rounded-xl text-slate-700 hover:bg-red-50 hover:text-red-600 transition text-base font-medium"
               onClick={() => setIsOpen(false)}
             >
               YouTube
+            </a>
+            <a
+              href="/contact"
+              className="mt-2 flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition"
+              onClick={() => setIsOpen(false)}
+            >
+              Hire Me <ArrowUpRight size={14} />
             </a>
           </nav>
         </div>

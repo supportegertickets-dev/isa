@@ -6,27 +6,31 @@
     "tech": ["Next.js", "Tailwind CSS", "Vercel", "AI Chatbot", "Authentication"],
     "link": "https://egertickets.vercel.app",
     "featured": true,
-    "status": "Live"
+    "status": "Live",
+    "category": "Platform"
   },
   {
     "title": "M-Pesa Ticketing System",
     "subtitle": "Mobile Payment Integration",
-    "desc": "Full-stack payment integration for events using Next.js, Node.js, and MongoDB. Handles secure M-Pesa API transactions for Kenyan users.",
+    "desc": "Full-stack payment integration for events using Next.js, Node.js, and MongoDB. Handles secure M-Pesa STK Push transactions, callback processing, and real-time payment confirmation for Kenyan users.",
     "tech": ["Next.js", "Node.js", "MongoDB", "M-Pesa API"],
-    "link": "#"
+    "link": "#",
+    "category": "FinTech"
   },
   {
     "title": "EESA Dashboard",
-    "subtitle": "Engineering Student Association",
-    "desc": "Association management system for engineering students. Features member tracking, event management, and communication tools.",
+    "subtitle": "Engineering Student Association Portal",
+    "desc": "Association management system for engineering students. Features member tracking, event management, communication tools, and committee coordination for EESA operations.",
     "tech": ["React", "Express", "PostgreSQL"],
-    "link": "#"
+    "link": "#",
+    "category": "Dashboard"
   },
   {
     "title": "Salsa Rhythm App",
     "subtitle": "Dance Progress Tracker",
-    "desc": "A creative tracker for dance progress with video tutorials, progress logging, and community features.",
+    "desc": "A creative mobile app for tracking dance progress with video tutorials, progress logging, social sharing, and community features for salsa enthusiasts.",
     "tech": ["React Native", "Firebase", "Node.js"],
-    "link": "#"
+    "link": "#",
+    "category": "Mobile"
   }
 ]
