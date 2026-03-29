@@ -13,6 +13,15 @@ function getContactEmail() {
   }
 }
 
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 export async function POST(request) {
   try {
     const { name, email, message } = await request.json();
@@ -32,6 +41,9 @@ export async function POST(request) {
     }
 
     const recipientEmail = getContactEmail();
+    const safeName = escapeHtml(name);
+    const safeEmail = escapeHtml(email);
+    const safeMessage = escapeHtml(message);
 
     const res = await fetch('https://api.brevo.com/v3/smtp/email', {
       method: 'POST',
@@ -43,8 +55,8 @@ export async function POST(request) {
       body: JSON.stringify({
         sender: { name: 'Portfolio Contact Form', email: process.env.BREVO_SENDER_EMAIL || recipientEmail },
         to: [{ email: recipientEmail, name: 'Portfolio Owner' }],
-        replyTo: { email, name },
-        subject: `Portfolio Contact: ${name}`,
+        replyTo: { email, name: safeName },
+        subject: `Portfolio Contact: ${safeName}`,
         htmlContent: `
           <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto;">
             <div style="background: linear-gradient(135deg, #1e293b, #334155); padding: 32px; border-radius: 16px 16px 0 0;">
@@ -54,15 +66,15 @@ export async function POST(request) {
               <table style="width: 100%; border-collapse: collapse;">
                 <tr>
                   <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #64748b; font-size: 13px; font-weight: 600; width: 80px;">Name</td>
-                  <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #1e293b; font-size: 14px;">${name}</td>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #1e293b; font-size: 14px;">${safeName}</td>
                 </tr>
                 <tr>
                   <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #64748b; font-size: 13px; font-weight: 600;">Email</td>
-                  <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #1e293b; font-size: 14px;"><a href="mailto:${email}" style="color: #2563eb;">${email}</a></td>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #1e293b; font-size: 14px;"><a href="mailto:${safeEmail}" style="color: #2563eb;">${safeEmail}</a></td>
                 </tr>
                 <tr>
                   <td style="padding: 12px 0; color: #64748b; font-size: 13px; font-weight: 600; vertical-align: top;">Message</td>
-                  <td style="padding: 12px 0; color: #1e293b; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${message}</td>
+                  <td style="padding: 12px 0; color: #1e293b; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${safeMessage}</td>
                 </tr>
               </table>
             </div>

@@ -100,6 +100,7 @@ export default function Contact() {
           <motion.div className="lg:col-span-3" variants={fadeInUp}>
             <form
               onSubmit={handleSubmit}
+              autoComplete="on"
               className="space-y-5"
             >
               <div className="grid sm:grid-cols-2 gap-5">
@@ -109,6 +110,7 @@ export default function Contact() {
                     type="text"
                     id="name"
                     name="name"
+                    autoComplete="name"
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Your name"
@@ -122,6 +124,7 @@ export default function Contact() {
                     type="email"
                     id="email"
                     name="email"
+                    autoComplete="email"
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="you@example.com"
