@@ -1,18 +1,30 @@
 [
   {
+    "title": "EgerTickets",
+    "subtitle": "Egerton University Event Ticketing Platform",
+    "desc": "Egerton University's official event ticketing and discovery platform. Students can browse and book campus events across music, sports, concerts, conferences, and workshops — with secure checkout in seconds. Features an AI assistant chatbot, real-time event dashboards, an organizer portal, and a full booking management system.",
+    "tech": ["Next.js", "Tailwind CSS", "Vercel", "AI Chatbot", "Authentication"],
+    "link": "https://egertickets.vercel.app",
+    "featured": true,
+    "status": "Live"
+  },
+  {
     "title": "M-Pesa Ticketing System",
+    "subtitle": "Mobile Payment Integration",
     "desc": "Full-stack payment integration for events using Next.js, Node.js, and MongoDB. Handles secure M-Pesa API transactions for Kenyan users.",
     "tech": ["Next.js", "Node.js", "MongoDB", "M-Pesa API"],
     "link": "#"
   },
   {
     "title": "EESA Dashboard",
+    "subtitle": "Engineering Student Association",
     "desc": "Association management system for engineering students. Features member tracking, event management, and communication tools.",
     "tech": ["React", "Express", "PostgreSQL"],
     "link": "#"
   },
   {
     "title": "Salsa Rhythm App",
+    "subtitle": "Dance Progress Tracker",
     "desc": "A creative tracker for dance progress with video tutorials, progress logging, and community features.",
     "tech": ["React Native", "Firebase", "Node.js"],
     "link": "#"
