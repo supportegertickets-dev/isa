@@ -178,5 +178,17 @@
     ],
     "link": "https://egertickets.vercel.app",
     "status": "Production"
+  },
+  "footer": {
+    "brandName": "Isaiah Maosa",
+    "tagline": "Full-Stack Developer & Electrical Engineering student building production software from Egerton University, Kenya.",
+    "quickLinks": [
+      { "label": "Home", "url": "/" },
+      { "label": "Projects", "url": "/projects" },
+      { "label": "Contact", "url": "/contact" },
+      { "label": "EgerTickets ↗", "url": "https://egertickets.vercel.app", "external": true }
+    ],
+    "copyright": "© 2026 Isaiah Maosa. All rights reserved.",
+    "bottomNote": "Built with passion. If you want yours, contact me."
   }
 }

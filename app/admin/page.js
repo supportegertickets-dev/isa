@@ -19,6 +19,7 @@ const tabs = [
   { id: 'social', label: 'Social' },
   { id: 'contact', label: 'Contact' },
   { id: 'featured', label: 'Featured' },
+  { id: 'footer', label: 'Footer' },
   { id: 'projects', label: 'Projects' },
 ];
 
@@ -119,6 +120,10 @@ export default function Admin() {
 
   const updateFeatured = (field, value) => {
     setPortfolio(prev => ({ ...prev, featuredProject: { ...prev.featuredProject, [field]: value } }));
+  };
+
+  const updateFooter = (field, value) => {
+    setPortfolio(prev => ({ ...prev, footer: { ...prev.footer, [field]: value } }));
   };
 
   const updateListItem = (section, index, field, value) => {
@@ -466,6 +471,54 @@ export default function Admin() {
               <Field label="Status Badge" value={portfolio.featuredProject?.status} onChange={v => updateFeatured('status', v)} placeholder="Production" />
             </div>
             <Field label="Technologies (comma-separated)" value={Array.isArray(portfolio.featuredProject?.tech) ? portfolio.featuredProject.tech.join(', ') : ''} onChange={v => updateFeatured('tech', v.split(',').map(t => t.trim()).filter(Boolean))} />
+          </div>
+        )}
+
+        {/* FOOTER */}
+        {activeTab === 'footer' && (
+          <div className="bg-white rounded-2xl border border-slate-200 p-6 space-y-5">
+            <h2 className="text-lg font-bold">Footer</h2>
+            <p className="text-xs text-slate-400">Edit the footer shown on every page.</p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <Field label="Brand Name" value={portfolio.footer?.brandName} onChange={v => updateFooter('brandName', v)} placeholder="Your Name" />
+              <Field label="Copyright" value={portfolio.footer?.copyright} onChange={v => updateFooter('copyright', v)} placeholder="© 2026 ..." />
+            </div>
+            <Field label="Tagline" type="textarea" value={portfolio.footer?.tagline} onChange={v => updateFooter('tagline', v)} placeholder="A short bio for the footer" />
+            <Field label="Bottom Note" value={portfolio.footer?.bottomNote} onChange={v => updateFooter('bottomNote', v)} placeholder="Built with passion..." />
+
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Quick Links</p>
+                <button onClick={() => updateFooter('quickLinks', [...(portfolio.footer?.quickLinks || []), { label: '', url: '', external: false }])} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 text-blue-600 rounded-lg text-xs font-semibold hover:bg-blue-100 transition">
+                  <Plus size={13} /> Add Link
+                </button>
+              </div>
+              {(portfolio.footer?.quickLinks || []).map((link, i) => (
+                <div key={i} className="flex items-end gap-3 mb-3">
+                  <Field label="Label" value={link.label} onChange={v => {
+                    const links = [...(portfolio.footer?.quickLinks || [])];
+                    links[i] = { ...links[i], label: v };
+                    updateFooter('quickLinks', links);
+                  }} className="flex-1" />
+                  <Field label="URL" value={link.url} onChange={v => {
+                    const links = [...(portfolio.footer?.quickLinks || [])];
+                    links[i] = { ...links[i], url: v };
+                    updateFooter('quickLinks', links);
+                  }} className="flex-1" />
+                  <Field label="External" type="checkbox" value={link.external} onChange={v => {
+                    const links = [...(portfolio.footer?.quickLinks || [])];
+                    links[i] = { ...links[i], external: v };
+                    updateFooter('quickLinks', links);
+                  }} />
+                  <button onClick={() => {
+                    const links = (portfolio.footer?.quickLinks || []).filter((_, idx) => idx !== i);
+                    updateFooter('quickLinks', links);
+                  }} className="p-1.5 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition mb-0.5">
+                    <Trash2 size={14} />
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
         )}
 
