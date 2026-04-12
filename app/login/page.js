@@ -33,7 +33,7 @@ export default function Login() {
 
   if (loading) return (
     <div className="min-h-[80vh] flex items-center justify-center">
-      <div className="w-8 h-8 border-2 border-slate-300 border-t-slate-900 rounded-full animate-spin" />
+      <div className="w-8 h-8 border-2 border-slate-300 dark:border-slate-600 border-t-slate-900 dark:border-t-slate-100 rounded-full animate-spin" />
     </div>
   );
 
@@ -45,20 +45,20 @@ export default function Login() {
             IM
           </div>
           <h1 className="text-2xl font-black">Admin Login</h1>
-          <p className="text-slate-500 text-sm mt-1">Sign in to edit your portfolio</p>
+          <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">Sign in to edit your portfolio</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {error && (
-            <div className="p-3 bg-red-50 text-red-600 text-sm rounded-xl border border-red-100 text-center font-medium">
+            <div className="p-3 bg-red-50 dark:bg-red-950 text-red-600 dark:text-red-400 text-sm rounded-xl border border-red-100 dark:border-red-800 text-center font-medium">
               {error}
             </div>
           )}
 
           <div>
-            <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">Email</label>
+            <label htmlFor="email" className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Email</label>
             <div className="relative">
-              <Mail size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+              <Mail size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500" />
               <input
                 type="email"
                 id="email"
@@ -66,15 +66,15 @@ export default function Login() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
                 required
-                className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition"
+                className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition bg-white dark:bg-slate-900 dark:text-white"
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-semibold text-slate-700 mb-2">Password</label>
+            <label htmlFor="password" className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Password</label>
             <div className="relative">
-              <Lock size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+              <Lock size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500" />
               <input
                 type="password"
                 id="password"
@@ -82,7 +82,7 @@ export default function Login() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
                 required
-                className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition"
+                className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition bg-white dark:bg-slate-900 dark:text-white"
               />
             </div>
           </div>
@@ -90,7 +90,7 @@ export default function Login() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full flex items-center justify-center gap-2 bg-slate-900 text-white py-3 rounded-xl font-semibold hover:bg-blue-600 transition text-sm disabled:opacity-50"
+            className="w-full flex items-center justify-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 py-3 rounded-xl font-semibold hover:bg-blue-600 dark:hover:bg-blue-400 dark:hover:text-white transition text-sm disabled:opacity-50"
           >
             {submitting ? (
               <><div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" /> Signing in...</>
@@ -100,7 +100,7 @@ export default function Login() {
           </button>
         </form>
 
-        <p className="text-center text-xs text-slate-400 mt-6">
+        <p className="text-center text-xs text-slate-400 dark:text-slate-500 mt-6">
           <a href="/" className="hover:text-blue-600 transition">&larr; Back to portfolio</a>
         </p>
       </div>

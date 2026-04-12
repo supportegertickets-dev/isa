@@ -23,7 +23,7 @@ export default function Footer() {
   const bottomNote = footer.bottomNote || '';
 
   return (
-    <footer className="border-t border-slate-100 bg-white">
+    <footer className="border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-950">
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-3 gap-10 mb-12">
           {/* Brand */}
@@ -35,22 +35,22 @@ export default function Footer() {
               <span className="font-bold text-lg tracking-tight">{brandName}</span>
             </div>
             {tagline && (
-              <p className="text-sm text-slate-500 leading-relaxed max-w-xs">{tagline}</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-xs">{tagline}</p>
             )}
           </div>
 
           {/* Quick Links */}
           {quickLinks.length > 0 && (
             <div>
-              <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Quick Links</p>
+              <p className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4">Quick Links</p>
               <nav className="flex flex-col gap-2.5">
                 {quickLinks.map((link, i) => (
                   link.external ? (
-                    <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 hover:text-blue-600 transition font-medium">
+                    <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition font-medium">
                       {link.label}
                     </a>
                   ) : (
-                    <Link key={i} href={link.url} className="text-sm text-slate-600 hover:text-blue-600 transition font-medium">
+                    <Link key={i} href={link.url} className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition font-medium">
                       {link.label}
                     </Link>
                   )
@@ -61,13 +61,13 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Connect</p>
+            <p className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4">Connect</p>
             <nav className="flex flex-col gap-2.5">
               {contact.email && (
-                <a href={`mailto:${contact.email}`} className="text-sm text-slate-600 hover:text-blue-600 transition font-medium">{contact.email}</a>
+                <a href={`mailto:${contact.email}`} className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition font-medium">{contact.email}</a>
               )}
               {social.map((s, i) => (
-                <a key={i} href={s.url} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 hover:text-blue-600 transition font-medium">
+                <a key={i} href={s.url} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition font-medium">
                   {s.platform} ↗
                 </a>
               ))}
@@ -76,9 +76,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-slate-400">{copyright}</p>
-          {bottomNote && <p className="text-xs text-slate-400">{bottomNote}</p>}
+        <div className="pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-slate-400 dark:text-slate-500">{copyright}</p>
+          {bottomNote && <p className="text-xs text-slate-400 dark:text-slate-500">{bottomNote}</p>}
         </div>
       </div>
     </footer>

@@ -45,25 +45,25 @@ export default function Portfolio() {
 
   if (!data) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-slate-300 border-t-slate-900 rounded-full animate-spin" />
+      <div className="min-h-screen bg-white dark:bg-slate-950 flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-slate-300 dark:border-slate-600 border-t-slate-900 dark:border-t-slate-100 rounded-full animate-spin" />
       </div>
     );
   }
 
-  const { hero, stats, services, skills, experience, about, social = [], contact = {}, featuredProject = {} } = data;
+  const { hero = {}, stats = {}, services = [], skills = [], experience = [], about = {}, social = [], contact = {}, featuredProject = {} } = data;
 
   const socialIconMap = { Github, Youtube, Video, Mail, Linkedin, Instagram: Globe, Globe };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100">
 
       {/* ===== HERO SECTION ===== */}
       <section className="relative overflow-hidden">
         {/* Background elements */}
         <div className="absolute inset-0 bg-grid opacity-50" />
-        <div className="absolute top-20 -left-32 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-40 animate-float" />
-        <div className="absolute bottom-0 -right-32 w-80 h-80 bg-violet-100 rounded-full blur-3xl opacity-30 animate-float-delayed" />
+        <div className="absolute top-20 -left-32 w-96 h-96 bg-blue-100 dark:bg-blue-900/30 rounded-full blur-3xl opacity-40 animate-float" />
+        <div className="absolute bottom-0 -right-32 w-80 h-80 bg-violet-100 dark:bg-violet-900/30 rounded-full blur-3xl opacity-30 animate-float-delayed" />
 
         <motion.div
           className="relative max-w-6xl mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-28"
@@ -73,7 +73,7 @@ export default function Portfolio() {
         >
           {/* Status badge */}
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold mb-8 uppercase tracking-wider"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950 border border-blue-100 dark:border-blue-800 text-blue-700 dark:text-blue-400 text-xs font-bold mb-8 uppercase tracking-wider"
             variants={fadeInUp}
           >
             <span className="relative flex h-2 w-2">
@@ -91,11 +91,11 @@ export default function Portfolio() {
             <br />
             <span className="text-gradient">{hero.titleHighlight}</span> that
             <br />
-            <span className="text-slate-400">{hero.titleEnd}</span>
+            <span className="text-slate-400 dark:text-slate-500">{hero.titleEnd}</span>
           </motion.h1>
 
           <motion.p
-            className="text-lg md:text-xl text-slate-500 max-w-xl leading-relaxed mb-10"
+            className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed mb-10"
             variants={fadeInUp}
           >
             {hero.subtitle}
@@ -107,13 +107,13 @@ export default function Portfolio() {
           >
             <LinkComponent
               href="/projects"
-              className="inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-3.5 rounded-full font-semibold hover:bg-blue-600 transition-all shadow-lg shadow-slate-900/10 text-sm"
+              className="inline-flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-8 py-3.5 rounded-full font-semibold hover:bg-blue-600 dark:hover:bg-blue-400 dark:hover:text-white transition-all shadow-lg shadow-slate-900/10 dark:shadow-none text-sm"
             >
               View My Work <ChevronRight size={15} />
             </LinkComponent>
             <LinkComponent
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold border border-slate-200 hover:border-slate-400 transition-all text-sm"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold border border-slate-200 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500 transition-all text-sm"
             >
               Get In Touch
             </LinkComponent>
@@ -124,7 +124,7 @@ export default function Portfolio() {
             className="flex items-center gap-3"
             variants={fadeInUp}
           >
-            <span className="text-xs text-slate-400 font-medium uppercase tracking-wide mr-1">Follow</span>
+            <span className="text-xs text-slate-400 dark:text-slate-500 font-medium uppercase tracking-wide mr-1">Follow</span>
             {social.map((s) => {
               const SIcon = socialIconMap[s.icon] || iconMap[s.icon] || Globe;
               return (
@@ -133,7 +133,7 @@ export default function Portfolio() {
                   href={s.url}
                   target={s.url?.startsWith('mailto') ? undefined : '_blank'}
                   rel={s.url?.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-                  className="p-2.5 border border-slate-200 rounded-xl hover:bg-slate-50 transition-all"
+                  className="p-2.5 border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
                   aria-label={s.platform}
                 >
                   <SIcon size={17} />
@@ -146,7 +146,7 @@ export default function Portfolio() {
 
       {/* ===== STATS BAR ===== */}
       <motion.section
-        className="border-y border-slate-100 bg-slate-50/50"
+        className="border-y border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, margin: '-50px' }}
@@ -155,8 +155,8 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((s) => (
             <motion.div key={s.label} className="text-center" variants={fadeInUp}>
-              <div className="text-3xl md:text-4xl font-black text-slate-900">{s.value}</div>
-              <div className="text-xs text-slate-500 font-medium uppercase tracking-wider mt-1">{s.label}</div>
+              <div className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white">{s.value}</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider mt-1">{s.label}</div>
             </motion.div>
           ))}
         </div>
@@ -171,7 +171,7 @@ export default function Portfolio() {
         variants={stagger}
       >
         <motion.div className="mb-14" variants={fadeInUp}>
-          <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Services</p>
+          <p className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-3">Expertise</p>
           <h2 className="text-3xl md:text-4xl font-black">What I Do</h2>
         </motion.div>
 
@@ -201,14 +201,14 @@ export default function Portfolio() {
             return (
               <motion.div
                 key={i}
-                className="p-7 rounded-2xl border border-slate-100 card-hover bg-white"
+                className="p-7 rounded-2xl border border-slate-100 dark:border-slate-800 card-hover bg-white dark:bg-slate-900"
                 variants={fadeInUp}
               >
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 border ${colorMap[s.color]}`}>
                   <IconComponent size={22} />
                 </div>
                 <h3 className="text-lg font-bold mb-2">{s.title}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">{s.desc}</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{s.desc}</p>
               </motion.div>
             );
           })}
@@ -217,7 +217,7 @@ export default function Portfolio() {
 
       {/* ===== TECH STACK ===== */}
       <motion.section
-        className="bg-slate-50/50 border-y border-slate-100"
+        className="bg-slate-50/50 dark:bg-slate-900/50 border-y border-slate-100 dark:border-slate-800"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, margin: '-80px' }}
@@ -225,7 +225,7 @@ export default function Portfolio() {
       >
         <div className="max-w-6xl mx-auto px-6 py-24">
           <motion.div className="mb-14" variants={fadeInUp}>
-            <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Tech Stack</p>
+            <p className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-3">Tech Stack</p>
             <h2 className="text-3xl md:text-4xl font-black">Tools I Work With</h2>
           </motion.div>
 
@@ -233,10 +233,10 @@ export default function Portfolio() {
             {skills.map((s) => (
               <motion.div key={s.name} className="group" variants={fadeInUp}>
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-semibold text-slate-700">{s.name}</span>
-                  <span className="text-xs text-slate-400 font-medium">{s.level}%</span>
+                  <span className="text-sm font-semibold text-slate-700 dark:text-slate-200">{s.name}</span>
+                  <span className="text-xs text-slate-400 dark:text-slate-500 font-medium">{s.level}%</span>
                 </div>
-                <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
+                <div className="h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
                   <motion.div
                     className="h-full bg-gradient-to-r from-blue-600 to-violet-500 rounded-full"
                     initial={{ width: 0 }}
@@ -260,12 +260,12 @@ export default function Portfolio() {
         variants={stagger}
       >
         <motion.div className="mb-10" variants={fadeInUp}>
-          <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Featured Work</p>
+          <p className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-3">Featured Work</p>
           <h2 className="text-3xl md:text-4xl font-black">Flagship Project</h2>
         </motion.div>
 
         <motion.div
-          className="rounded-3xl border border-slate-200 bg-white overflow-hidden card-hover glow-blue"
+          className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden card-hover glow-blue"
           variants={fadeInUp}
         >
           {/* Gradient header */}
@@ -291,12 +291,12 @@ export default function Portfolio() {
 
           {/* Content body */}
           <div className="p-8 md:p-10">
-            <p className="text-slate-600 leading-relaxed mb-7 max-w-2xl">
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-7 max-w-2xl">
               {featuredProject.description}
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
               {(featuredProject.tech || []).map((tech) => (
-                <span key={tech} className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full">
+                <span key={tech} className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold rounded-full">
                   {tech}
                 </span>
               ))}
@@ -307,14 +307,14 @@ export default function Portfolio() {
                   href={featuredProject.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-slate-900 text-white px-7 py-3 rounded-full font-semibold hover:bg-blue-600 transition-all text-sm shadow-md"
+                  className="inline-flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-7 py-3 rounded-full font-semibold hover:bg-blue-600 dark:hover:bg-blue-400 dark:hover:text-white transition-all text-sm shadow-md"
                 >
                   Visit Live Site <ExternalLink size={14} />
                 </a>
               )}
               <LinkComponent
                 href="/projects"
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold border border-slate-200 hover:border-slate-400 transition-all text-sm"
+                className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold border border-slate-200 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500 transition-all text-sm"
               >
                 All Projects <ChevronRight size={14} />
               </LinkComponent>
@@ -325,7 +325,7 @@ export default function Portfolio() {
 
       {/* ===== EXPERIENCE TIMELINE ===== */}
       <motion.section
-        className="bg-slate-50/50 border-y border-slate-100"
+        className="bg-slate-50/50 dark:bg-slate-900/50 border-y border-slate-100 dark:border-slate-800"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, margin: '-80px' }}
@@ -333,7 +333,7 @@ export default function Portfolio() {
       >
         <div className="max-w-6xl mx-auto px-6 py-24">
           <motion.div className="mb-14" variants={fadeInUp}>
-            <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Background</p>
+            <p className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-3">Background</p>
             <h2 className="text-3xl md:text-4xl font-black">Experience &amp; Leadership</h2>
           </motion.div>
 
@@ -341,25 +341,25 @@ export default function Portfolio() {
             {experience.map((e, i) => (
               <motion.div
                 key={i}
-                className="relative pl-8 pb-10 last:pb-0 border-l-2 border-slate-200 last:border-transparent"
+                className="relative pl-8 pb-10 last:pb-0 border-l-2 border-slate-200 dark:border-slate-700 last:border-transparent"
                 variants={fadeInUp}
               >
                 {/* Timeline dot */}
                 <div className={`absolute -left-[9px] top-0.5 w-4 h-4 rounded-full border-2 ${
                   e.current
-                    ? 'bg-blue-600 border-blue-600 shadow-md shadow-blue-200'
-                    : 'bg-white border-slate-300'
+                    ? 'bg-blue-600 border-blue-600 shadow-md shadow-blue-200 dark:shadow-blue-900'
+                    : 'bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-600'
                 }`} />
 
                 <div className="flex flex-wrap items-center gap-3 mb-1.5">
-                  <h3 className="text-base font-bold text-slate-900">{e.role}</h3>
+                  <h3 className="text-base font-bold text-slate-900 dark:text-white">{e.role}</h3>
                   {e.current && (
-                    <span className="px-2 py-0.5 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-full uppercase">Current</span>
+                    <span className="px-2 py-0.5 bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 text-[10px] font-bold rounded-full uppercase">Current</span>
                   )}
                 </div>
-                <p className="text-sm font-medium text-blue-600 mb-1">{e.org}</p>
-                <p className="text-xs text-slate-400 font-medium mb-2">{e.period}</p>
-                <p className="text-sm text-slate-500 leading-relaxed">{e.desc}</p>
+                <p className="text-sm font-medium text-blue-600 dark:text-blue-400 mb-1">{e.org}</p>
+                <p className="text-xs text-slate-400 dark:text-slate-500 font-medium mb-2">{e.period}</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{e.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -375,7 +375,7 @@ export default function Portfolio() {
         variants={stagger}
       >
         <motion.div className="mb-14" variants={fadeInUp}>
-          <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Beyond Code</p>
+          <p className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-3">Beyond Code</p>
           <h2 className="text-3xl md:text-4xl font-black">Who I Am</h2>
         </motion.div>
 
@@ -385,7 +385,7 @@ export default function Portfolio() {
             return (
               <motion.div
                 key={i}
-                className="relative p-7 rounded-2xl border border-slate-100 bg-white card-hover group overflow-hidden"
+                className="relative p-7 rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 card-hover group overflow-hidden"
                 variants={fadeInUp}
               >
                 <div className={`absolute inset-0 ${card.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
@@ -394,7 +394,7 @@ export default function Portfolio() {
                     <IconComponent size={20} />
                   </div>
                   <h3 className="text-lg font-bold mb-2">{card.title}</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed">{card.desc}</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{card.desc}</p>
                 </div>
               </motion.div>
             );

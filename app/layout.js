@@ -2,6 +2,7 @@ import './globals.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { AuthProvider } from './context/AuthContext';
+import { ThemeProvider } from './context/ThemeContext';
 
 export const metadata = {
   title: 'Isaiah Maosa — Full-Stack Developer & Engineer',
@@ -17,8 +18,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-white text-slate-900">
+    <html lang="en" suppressHydrationWarning>
+      <body className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
+        <ThemeProvider>
         <AuthProvider>
         <Header />
 
@@ -26,6 +28,7 @@ export default function RootLayout({ children }) {
 
         <Footer />
         </AuthProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -30,8 +30,8 @@ export default function Contact() {
 
   if (!data) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-slate-300 border-t-slate-900 rounded-full animate-spin" />
+      <div className="min-h-screen bg-white dark:bg-slate-950 flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-slate-300 dark:border-slate-600 border-t-slate-900 dark:border-t-slate-100 rounded-full animate-spin" />
       </div>
     );
   }
@@ -77,7 +77,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-slate-950">
       <motion.div
         className="max-w-6xl mx-auto px-6 py-16 md:py-24"
         initial="initial"
@@ -90,7 +90,7 @@ export default function Contact() {
           <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-4">
             Let&apos;s Work Together
           </h1>
-          <p className="text-lg text-slate-500 max-w-lg">
+          <p className="text-lg text-slate-500 dark:text-slate-400 max-w-lg">
             Whether you have a project idea, collaboration proposal, or just want to say hi — I&apos;d love to hear from you.
           </p>
         </motion.div>
@@ -105,7 +105,7 @@ export default function Contact() {
             >
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">Name</label>
+                  <label htmlFor="name" className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Name</label>
                   <input
                     type="text"
                     id="name"
@@ -115,11 +115,11 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="Your name"
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition bg-white"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition bg-white dark:bg-slate-900 dark:text-white"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">Email</label>
+                  <label htmlFor="email" className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Email</label>
                   <input
                     type="email"
                     id="email"
@@ -129,12 +129,12 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="you@example.com"
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition bg-white"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition bg-white dark:bg-slate-900 dark:text-white"
                   />
                 </div>
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">Message</label>
+                <label htmlFor="message" className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Message</label>
                 <textarea
                   id="message"
                   name="message"
@@ -143,13 +143,13 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="Tell me about your project or idea..."
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition bg-white resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition bg-white dark:bg-slate-900 dark:text-white resize-none"
                 />
               </div>
               <button
                 type="submit"
                 disabled={sending}
-                className="inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-3.5 rounded-full font-semibold hover:bg-blue-600 transition-all text-sm shadow-md disabled:opacity-50"
+                className="inline-flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-8 py-3.5 rounded-full font-semibold hover:bg-blue-600 dark:hover:bg-blue-400 dark:hover:text-white transition-all text-sm shadow-md disabled:opacity-50"
               >
                 {sending ? (
                   <>
@@ -166,8 +166,8 @@ export default function Contact() {
               {toast && (
                 <div className={`flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium ${
                   toast.type === 'success'
-                    ? 'bg-green-50 text-green-700 border border-green-200'
-                    : 'bg-red-50 text-red-700 border border-red-200'
+                    ? 'bg-green-50 dark:bg-green-950 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800'
+                    : 'bg-red-50 dark:bg-red-950 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-800'
                 }`}>
                   {toast.type === 'success' ? '✓' : '!'} {toast.text}
                 </div>
@@ -179,21 +179,21 @@ export default function Contact() {
           <motion.div className="lg:col-span-2 space-y-8" variants={fadeInUp}>
             {/* Contact Details */}
             <div>
-              <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-5">Reach Me At</h3>
+              <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-5">Reach Me At</h3>
               <div className="space-y-4">
                 {contactInfo.map((item) => (
                   <div key={item.label} className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center shrink-0">
-                      <item.icon size={17} className="text-slate-600" />
+                    <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0">
+                      <item.icon size={17} className="text-slate-600 dark:text-slate-400" />
                     </div>
                     <div>
-                      <p className="text-xs text-slate-400 font-medium">{item.label}</p>
+                      <p className="text-xs text-slate-400 dark:text-slate-500 font-medium">{item.label}</p>
                       {item.href ? (
-                        <a href={item.href} className="text-sm font-semibold text-slate-900 hover:text-blue-600 transition">
+                        <a href={item.href} className="text-sm font-semibold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition">
                           {item.value}
                         </a>
                       ) : (
-                        <p className="text-sm font-semibold text-slate-900">{item.value}</p>
+                        <p className="text-sm font-semibold text-slate-900 dark:text-white">{item.value}</p>
                       )}
                     </div>
                   </div>
@@ -203,7 +203,7 @@ export default function Contact() {
 
             {/* Social Links */}
             <div>
-              <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-5">Socials</h3>
+              <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-5">Socials</h3>
               <div className="space-y-2">
                 {social.filter(s => !s.url?.startsWith('mailto')).map((s) => {
                   const SIcon = socialIconMap[s.icon] || Globe;
@@ -213,12 +213,12 @@ export default function Contact() {
                       href={s.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 px-4 py-3 rounded-xl border border-slate-100 transition-all group hover:bg-slate-50 hover:border-slate-200"
+                      className="flex items-center gap-3 px-4 py-3 rounded-xl border border-slate-100 dark:border-slate-800 transition-all group hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-200 dark:hover:border-slate-700"
                     >
                       <SIcon size={18} />
                       <div className="flex-1 min-w-0">
                         <p className="text-sm font-semibold">{s.platform}</p>
-                        <p className="text-xs text-slate-400">{s.handle}</p>
+                        <p className="text-xs text-slate-400 dark:text-slate-500">{s.handle}</p>
                       </div>
                       <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition" />
                     </a>

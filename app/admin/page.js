@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
@@ -27,13 +27,13 @@ function Field({ label, value, onChange, type = 'text', placeholder = '', classN
   if (type === 'textarea') {
     return (
       <div className={className}>
-        <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">{label}</label>
+        <label className="block text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">{label}</label>
         <textarea
           value={value || ''}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
           rows={3}
-          className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition resize-none"
+          className="w-full px-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition resize-none bg-white dark:bg-slate-900 dark:text-white"
         />
       </div>
     );
@@ -47,34 +47,34 @@ function Field({ label, value, onChange, type = 'text', placeholder = '', classN
           onChange={(e) => onChange(e.target.checked)}
           className="w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
         />
-        <span className="text-sm font-medium text-slate-700">{label}</span>
+        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">{label}</span>
       </label>
     );
   }
   if (type === 'number') {
     return (
       <div className={className}>
-        <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">{label}</label>
+        <label className="block text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">{label}</label>
         <input
           type="number"
           value={value ?? 0}
           onChange={(e) => onChange(parseInt(e.target.value) || 0)}
           min="0"
           max="100"
-          className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition"
+          className="w-full px-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition bg-white dark:bg-slate-900 dark:text-white"
         />
       </div>
     );
   }
   return (
     <div className={className}>
-      <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">{label}</label>
+      <label className="block text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">{label}</label>
       <input
         type={type}
         value={value || ''}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition"
+        className="w-full px-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition bg-white dark:bg-slate-900 dark:text-white"
       />
     </div>
   );
@@ -189,7 +189,7 @@ export default function Admin() {
   if (authLoading || !portfolio || !projects) {
     return (
       <div className="min-h-[80vh] flex items-center justify-center">
-        <div className="flex items-center gap-3 text-slate-400 text-sm">
+        <div className="flex items-center gap-3 text-slate-400 dark:text-slate-500 text-sm">
           <div className="w-5 h-5 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
           Loading admin panel...
         </div>
@@ -198,19 +198,19 @@ export default function Admin() {
   }
 
   if (!isAuthenticated) return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-      <div className="w-8 h-8 border-2 border-slate-300 border-t-blue-600 rounded-full animate-spin" />
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex items-center justify-center">
+      <div className="w-8 h-8 border-2 border-slate-300 dark:border-slate-600 border-t-blue-600 rounded-full animate-spin" />
     </div>
   );
 
   const handleSave = activeTab === 'projects' ? saveProjects : savePortfolio;
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
       {/* Toast */}
       {toast && (
         <div className={`fixed top-20 right-6 z-50 px-4 py-3 rounded-xl shadow-lg text-sm font-medium flex items-center gap-2 animate-in ${
-          toast.type === 'success' ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-red-50 text-red-700 border border-red-200'
+          toast.type === 'success' ? 'bg-green-50 dark:bg-green-950 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800' : 'bg-red-50 dark:bg-red-950 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-800'
         }`}>
           {toast.type === 'success' ? <Check size={15} /> : <AlertCircle size={15} />}
           {toast.text}
@@ -218,11 +218,11 @@ export default function Admin() {
       )}
 
       {/* Header */}
-      <div className="bg-white border-b border-slate-200 sticky top-16 z-40">
+      <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-16 z-40">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div>
             <h1 className="text-xl font-black">Admin Dashboard</h1>
-            <p className="text-xs text-slate-400">Edit your portfolio content</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500">Edit your portfolio content</p>
           </div>
           <div className="flex items-center gap-3">
             <button
@@ -234,7 +234,7 @@ export default function Admin() {
             </button>
             <button
               onClick={() => { logout(); router.push('/'); }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 transition"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition"
             >
               <LogOut size={14} /> Logout
             </button>
@@ -251,7 +251,7 @@ export default function Admin() {
                 className={`px-4 py-2.5 text-sm font-medium whitespace-nowrap border-b-2 transition ${
                   activeTab === tab.id
                     ? 'border-blue-600 text-blue-600'
-                    : 'border-transparent text-slate-500 hover:text-slate-700'
+                    : 'border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'
                 }`}
               >
                 {tab.label}
@@ -266,7 +266,7 @@ export default function Admin() {
 
         {/* HERO */}
         {activeTab === 'hero' && (
-          <div className="bg-white rounded-2xl border border-slate-200 p-6 space-y-5">
+          <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-5">
             <h2 className="text-lg font-bold">Hero Section</h2>
             <Field label="Status Badge" value={portfolio.hero.badge} onChange={v => updateHero('badge', v)} placeholder="Available for Work" />
             <div className="grid sm:grid-cols-3 gap-4">
@@ -289,7 +289,7 @@ export default function Admin() {
               </button>
             </div>
             {portfolio.stats.map((stat, i) => (
-              <div key={i} className="bg-white rounded-xl border border-slate-200 p-4 flex items-end gap-4">
+              <div key={i} className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-4 flex items-end gap-4">
                 <Field label="Value" value={stat.value} onChange={v => updateListItem('stats', i, 'value', v)} className="flex-1" />
                 <Field label="Label" value={stat.label} onChange={v => updateListItem('stats', i, 'label', v)} className="flex-1" />
                 <button onClick={() => removeListItem('stats', i)} className="p-2 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition mb-0.5">
@@ -310,9 +310,9 @@ export default function Admin() {
               </button>
             </div>
             {portfolio.services.map((service, i) => (
-              <div key={i} className="bg-white rounded-xl border border-slate-200 p-5 space-y-4">
+              <div key={i} className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-bold text-slate-600">{service.title || `Service ${i + 1}`}</span>
+                  <span className="text-sm font-bold text-slate-600 dark:text-slate-300 dark:text-slate-300">{service.title || `Service ${i + 1}`}</span>
                   <button onClick={() => removeListItem('services', i)} className="p-1.5 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition">
                     <Trash2 size={14} />
                   </button>
@@ -340,7 +340,7 @@ export default function Admin() {
               </button>
             </div>
             {portfolio.skills.map((skill, i) => (
-              <div key={i} className="bg-white rounded-xl border border-slate-200 p-4 flex items-end gap-4">
+              <div key={i} className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-4 flex items-end gap-4">
                 <Field label="Skill Name" value={skill.name} onChange={v => updateListItem('skills', i, 'name', v)} className="flex-1" />
                 <Field label="Level (%)" type="number" value={skill.level} onChange={v => updateListItem('skills', i, 'level', v)} className="w-28" />
                 <button onClick={() => removeListItem('skills', i)} className="p-2 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition mb-0.5">
@@ -361,9 +361,9 @@ export default function Admin() {
               </button>
             </div>
             {portfolio.experience.map((exp, i) => (
-              <div key={i} className="bg-white rounded-xl border border-slate-200 p-5 space-y-4">
+              <div key={i} className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-bold text-slate-600">{exp.role || `Entry ${i + 1}`}</span>
+                  <span className="text-sm font-bold text-slate-600 dark:text-slate-300 dark:text-slate-300">{exp.role || `Entry ${i + 1}`}</span>
                   <button onClick={() => removeListItem('experience', i)} className="p-1.5 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition">
                     <Trash2 size={14} />
                   </button>
@@ -373,7 +373,7 @@ export default function Admin() {
                   <Field label="Organization" value={exp.org} onChange={v => updateListItem('experience', i, 'org', v)} />
                 </div>
                 <div className="grid sm:grid-cols-2 gap-4 items-end">
-                  <Field label="Period" value={exp.period} onChange={v => updateListItem('experience', i, 'period', v)} placeholder="2024 — Present" />
+                  <Field label="Period" value={exp.period} onChange={v => updateListItem('experience', i, 'period', v)} placeholder="2024 â€” Present" />
                   <Field label="Current Role" type="checkbox" value={exp.current} onChange={v => updateListItem('experience', i, 'current', v)} />
                 </div>
                 <Field label="Description" type="textarea" value={exp.desc} onChange={v => updateListItem('experience', i, 'desc', v)} />
@@ -392,9 +392,9 @@ export default function Admin() {
               </button>
             </div>
             {portfolio.about.map((card, i) => (
-              <div key={i} className="bg-white rounded-xl border border-slate-200 p-5 space-y-4">
+              <div key={i} className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-bold text-slate-600">{card.title || `Card ${i + 1}`}</span>
+                  <span className="text-sm font-bold text-slate-600 dark:text-slate-300 dark:text-slate-300">{card.title || `Card ${i + 1}`}</span>
                   <button onClick={() => removeListItem('about', i)} className="p-1.5 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition">
                     <Trash2 size={14} />
                   </button>
@@ -426,9 +426,9 @@ export default function Admin() {
               </button>
             </div>
             {(portfolio.social || []).map((link, i) => (
-              <div key={i} className="bg-white rounded-xl border border-slate-200 p-5 space-y-4">
+              <div key={i} className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-bold text-slate-600">{link.platform || `Link ${i + 1}`}</span>
+                  <span className="text-sm font-bold text-slate-600 dark:text-slate-300 dark:text-slate-300">{link.platform || `Link ${i + 1}`}</span>
                   <button onClick={() => removeListItem('social', i)} className="p-1.5 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition">
                     <Trash2 size={14} />
                   </button>
@@ -448,7 +448,7 @@ export default function Admin() {
 
         {/* CONTACT */}
         {activeTab === 'contact' && (
-          <div className="bg-white rounded-2xl border border-slate-200 p-6 space-y-5">
+          <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-5">
             <h2 className="text-lg font-bold">Contact Information</h2>
             <Field label="Email" value={portfolio.contact?.email} onChange={v => updateContact('email', v)} placeholder="your@email.com" />
             <Field label="Phone" value={portfolio.contact?.phone} onChange={v => updateContact('phone', v)} placeholder="+254 xxx xxx xxx" />
@@ -458,9 +458,9 @@ export default function Admin() {
 
         {/* FEATURED PROJECT */}
         {activeTab === 'featured' && (
-          <div className="bg-white rounded-2xl border border-slate-200 p-6 space-y-5">
+          <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-5">
             <h2 className="text-lg font-bold">Featured Project (Homepage)</h2>
-            <p className="text-xs text-slate-400">This is the spotlight project shown on your homepage hero area.</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500">This is the spotlight project shown on your homepage hero area.</p>
             <div className="grid sm:grid-cols-2 gap-4">
               <Field label="Title" value={portfolio.featuredProject?.title} onChange={v => updateFeatured('title', v)} placeholder="Project Name" />
               <Field label="Subtitle" value={portfolio.featuredProject?.subtitle} onChange={v => updateFeatured('subtitle', v)} placeholder="Short tagline" />
@@ -476,19 +476,19 @@ export default function Admin() {
 
         {/* FOOTER */}
         {activeTab === 'footer' && (
-          <div className="bg-white rounded-2xl border border-slate-200 p-6 space-y-5">
+          <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-5">
             <h2 className="text-lg font-bold">Footer</h2>
-            <p className="text-xs text-slate-400">Edit the footer shown on every page.</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500">Edit the footer shown on every page.</p>
             <div className="grid sm:grid-cols-2 gap-4">
               <Field label="Brand Name" value={portfolio.footer?.brandName} onChange={v => updateFooter('brandName', v)} placeholder="Your Name" />
-              <Field label="Copyright" value={portfolio.footer?.copyright} onChange={v => updateFooter('copyright', v)} placeholder="© 2026 ..." />
+              <Field label="Copyright" value={portfolio.footer?.copyright} onChange={v => updateFooter('copyright', v)} placeholder="Â© 2026 ..." />
             </div>
             <Field label="Tagline" type="textarea" value={portfolio.footer?.tagline} onChange={v => updateFooter('tagline', v)} placeholder="A short bio for the footer" />
             <Field label="Bottom Note" value={portfolio.footer?.bottomNote} onChange={v => updateFooter('bottomNote', v)} placeholder="Built with passion..." />
 
             <div>
               <div className="flex items-center justify-between mb-3">
-                <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Quick Links</p>
+                <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Quick Links</p>
                 <button onClick={() => updateFooter('quickLinks', [...(portfolio.footer?.quickLinks || []), { label: '', url: '', external: false }])} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 text-blue-600 rounded-lg text-xs font-semibold hover:bg-blue-100 transition">
                   <Plus size={13} /> Add Link
                 </button>
@@ -532,10 +532,10 @@ export default function Admin() {
               </button>
             </div>
             {projects.map((proj, i) => (
-              <div key={i} className="bg-white rounded-xl border border-slate-200 p-5 space-y-4">
+              <div key={i} className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className="text-sm font-bold text-slate-600">{proj.title || `Project ${i + 1}`}</span>
+                    <span className="text-sm font-bold text-slate-600 dark:text-slate-300 dark:text-slate-300">{proj.title || `Project ${i + 1}`}</span>
                     {proj.featured && <span className="px-2 py-0.5 bg-blue-100 text-blue-600 text-[10px] font-bold rounded-full uppercase">Featured</span>}
                     {proj.status === 'Live' && <span className="px-2 py-0.5 bg-green-100 text-green-600 text-[10px] font-bold rounded-full uppercase">Live</span>}
                   </div>

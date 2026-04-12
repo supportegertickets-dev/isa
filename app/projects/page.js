@@ -27,8 +27,8 @@ export default function Projects() {
 
   if (!projectsData) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-slate-300 border-t-slate-900 rounded-full animate-spin" />
+      <div className="min-h-screen bg-white dark:bg-slate-950 flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-slate-300 dark:border-slate-600 border-t-slate-900 dark:border-t-slate-100 rounded-full animate-spin" />
       </div>
     );
   }
@@ -37,7 +37,7 @@ export default function Projects() {
   const others = projectsData.filter((p) => !p.featured);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-slate-950">
       <motion.div
         className="max-w-6xl mx-auto px-6 py-16 md:py-24"
         initial="initial"
@@ -48,7 +48,7 @@ export default function Projects() {
         <motion.div className="mb-16" variants={fadeInUp}>
           <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Portfolio</p>
           <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-4">My Projects</h1>
-          <p className="text-lg text-slate-500 max-w-lg">
+          <p className="text-lg text-slate-500 dark:text-slate-400 max-w-lg">
             Production software I&apos;ve designed, built, and shipped. From university platforms to fintech integrations.
           </p>
         </motion.div>
@@ -57,7 +57,7 @@ export default function Projects() {
         {featured.map((proj, i) => (
           <motion.div
             key={i}
-            className="mb-16 rounded-3xl border border-slate-200 bg-white overflow-hidden card-hover glow-blue"
+            className="mb-16 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden card-hover glow-blue"
             variants={fadeInUp}
           >
             {/* Gradient header */}
@@ -91,11 +91,11 @@ export default function Projects() {
             {/* Content body */}
             <div className="p-8 md:p-10">
               {proj.image && (
-                <div className="rounded-xl overflow-hidden border border-slate-100 mb-7">
+                <div className="rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 mb-7">
                   <img src={proj.image} alt={proj.title} className="w-full h-56 md:h-72 object-cover" />
                 </div>
               )}
-              <p className="text-slate-600 leading-relaxed mb-7 max-w-2xl">
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-7 max-w-2xl">
                 {proj.desc}
               </p>
 
@@ -103,7 +103,7 @@ export default function Projects() {
                 {proj.tech.map((tech, j) => (
                   <span
                     key={j}
-                    className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full"
+                    className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold rounded-full"
                   >
                     {tech}
                   </span>
@@ -115,7 +115,7 @@ export default function Projects() {
                   href={proj.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-slate-900 text-white px-7 py-3 rounded-full font-semibold hover:bg-blue-600 transition-all text-sm shadow-md"
+                  className="inline-flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-7 py-3 rounded-full font-semibold hover:bg-blue-600 dark:hover:bg-blue-400 dark:hover:text-white transition-all text-sm shadow-md"
                 >
                   Visit Live Site <ExternalLink size={14} />
                 </a>
@@ -128,7 +128,7 @@ export default function Projects() {
         {others.length > 0 && (
           <>
             <motion.h2
-              className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-8 mt-4"
+              className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-8 mt-4"
               variants={fadeInUp}
             >
               More Projects
@@ -137,17 +137,17 @@ export default function Projects() {
               {others.map((proj, i) => (
                 <motion.div
                   key={i}
-                  className="p-7 rounded-2xl border border-slate-100 bg-white card-hover group"
+                  className="p-7 rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 card-hover group"
                   variants={fadeInUp}
                 >
                   {proj.image && (
-                    <div className="rounded-xl overflow-hidden border border-slate-100 mb-5 -mx-2 -mt-2">
+                    <div className="rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 mb-5 -mx-2 -mt-2">
                       <img src={proj.image} alt={proj.title} className="w-full h-40 object-cover" />
                     </div>
                   )}
                   <div className="flex items-center gap-3 mb-4">
                     {proj.category && (
-                      <span className="px-2.5 py-0.5 bg-slate-100 text-slate-500 text-[10px] font-bold rounded-full uppercase tracking-wider">
+                      <span className="px-2.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-[10px] font-bold rounded-full uppercase tracking-wider">
                         {proj.category}
                       </span>
                     )}
@@ -156,14 +156,14 @@ export default function Projects() {
                     {proj.title}
                   </h3>
                   {proj.subtitle && (
-                    <p className="text-slate-400 text-sm font-medium mb-3">{proj.subtitle}</p>
+                    <p className="text-slate-400 dark:text-slate-500 text-sm font-medium mb-3">{proj.subtitle}</p>
                   )}
-                  <p className="text-slate-500 text-sm leading-relaxed mb-5">{proj.desc}</p>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-5">{proj.desc}</p>
                   <div className="flex flex-wrap gap-2 mb-5">
                     {proj.tech.map((tech, j) => (
                       <span
                         key={j}
-                        className="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-medium rounded-lg"
+                        className="px-2.5 py-1 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-medium rounded-lg"
                       >
                         {tech}
                       </span>
@@ -187,14 +187,14 @@ export default function Projects() {
 
         {/* CTA */}
         <motion.div
-          className="mt-20 rounded-2xl bg-slate-50 border border-slate-100 p-8 md:p-10 text-center"
+          className="mt-20 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-8 md:p-10 text-center"
           variants={fadeInUp}
         >
           <h3 className="text-xl font-bold mb-2">Interested in working together?</h3>
-          <p className="text-slate-500 text-sm mb-6">I&apos;m always open to new projects and collaborations.</p>
+          <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">I&apos;m always open to new projects and collaborations.</p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-slate-900 text-white px-7 py-3 rounded-full font-semibold hover:bg-blue-600 transition-all text-sm shadow-md"
+            className="inline-flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-7 py-3 rounded-full font-semibold hover:bg-blue-600 dark:hover:bg-blue-400 dark:hover:text-white transition-all text-sm shadow-md"
           >
             Get In Touch <ChevronRight size={14} />
           </Link>
